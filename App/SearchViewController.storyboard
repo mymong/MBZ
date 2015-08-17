@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FWM-FF-5Vr">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7706"/>
+    </dependencies>
+    <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="oHw-qo-lzo">
+            <objects>
+                <tableViewController id="FWM-FF-5Vr" customClass="SearchViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FPd-qW-wW8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SearchBarCell" id="FcB-1e-xc6">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FcB-1e-xc6" id="UM8-fr-2cu">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <searchBar contentMode="redraw" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SiE-9W-Kg6">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <scopeButtonTitles>
+                                                <string>Title</string>
+                                                <string>Title</string>
+                                            </scopeButtonTitles>
+                                        </searchBar>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="SiE-9W-Kg6" secondAttribute="trailing" id="8g2-9w-WfP"/>
+                                        <constraint firstItem="SiE-9W-Kg6" firstAttribute="leading" secondItem="UM8-fr-2cu" secondAttribute="leading" id="G25-3u-R5M"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EntityPickerCell" rowHeight="102" id="wJx-Tr-q9W">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wJx-Tr-q9W" id="pNL-Zq-Vbe">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <pickerView contentMode="scaleAspectFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FDe-Kq-CbO">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="102"/>
+                                        </pickerView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="FDe-Kq-CbO" secondAttribute="trailing" id="5gw-yg-Njd"/>
+                                        <constraint firstItem="FDe-Kq-CbO" firstAttribute="leading" secondItem="pNL-Zq-Vbe" secondAttribute="leading" id="c2h-xn-KQX"/>
+                                        <constraint firstItem="FDe-Kq-CbO" firstAttribute="top" secondItem="pNL-Zq-Vbe" secondAttribute="top" id="h40-xO-JNa"/>
+                                        <constraint firstAttribute="bottom" secondItem="FDe-Kq-CbO" secondAttribute="bottom" id="wFp-gb-Uzr"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FWM-FF-5Vr" id="pqn-B3-stC"/>
+                            <outlet property="delegate" destination="FWM-FF-5Vr" id="eEf-X9-o5z"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="YRl-ev-wqJ" id="kEc-o4-ZAY"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UH8-xX-hXb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="YRl-ev-wqJ">
+                    <connections>
+                        <outlet property="delegate" destination="FWM-FF-5Vr" id="A4c-Ic-kpy"/>
+                        <outlet property="searchContentsController" destination="FWM-FF-5Vr" id="pwf-BF-IPP"/>
+                        <outlet property="searchResultsDataSource" destination="FWM-FF-5Vr" id="1Ut-Jc-98v"/>
+                        <outlet property="searchResultsDelegate" destination="FWM-FF-5Vr" id="4Ac-8z-YnQ"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="644" y="123"/>
+        </scene>
+    </scenes>
+</document>
