@@ -13,7 +13,7 @@
 
 @interface AppViewController ()
 @property (nonatomic) AppViewSearchManager *searchManager;
-@property (nonatomic) UISearchController *sc;
+//@property (nonatomic) UISearchController *sc;
 @end
 
 @implementation AppViewController

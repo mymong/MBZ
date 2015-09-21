@@ -7,25 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		461D49C91B764E2D00AEDBD6 /* ArtistCellAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 461D49C51B764E2D00AEDBD6 /* ArtistCellAccessoryView.m */; };
-		461D49CA1B764E2D00AEDBD6 /* ArtistCellAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 461D49C61B764E2D00AEDBD6 /* ArtistCellAccessoryView.xib */; };
-		461D49CB1B764E2D00AEDBD6 /* UITableViewCell+ArtistCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 461D49C81B764E2D00AEDBD6 /* UITableViewCell+ArtistCell.m */; };
-		466587F41B723AB90046F23D /* ListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466587F31B723AB90046F23D /* ListViewController.storyboard */; };
-		466587F71B723BDA0046F23D /* AppViewSearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 466587F61B723BDA0046F23D /* AppViewSearchManager.m */; };
-		466587FA1B72459F0046F23D /* AppViewSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466587F91B72459F0046F23D /* AppViewSearchController.m */; };
-		466587FD1B7246EA0046F23D /* AppViewSearchParamsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466587FC1B7246EA0046F23D /* AppViewSearchParamsController.m */; };
-		466587FF1B724E840046F23D /* AppViewSearchParamsController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466587FE1B724E840046F23D /* AppViewSearchParamsController.storyboard */; };
-		46A82DEF1B70F34500FE793E /* ListViewDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A82DEE1B70F34500FE793E /* ListViewDataLoader.m */; };
-		46C71F141B777AC500319A35 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C71F131B777AC500319A35 /* SearchViewController.m */; };
-		46C71F161B777AD800319A35 /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C71F151B777AD800319A35 /* SearchViewController.storyboard */; };
-		46E850501B6E5C9200BC3FA9 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E8504F1B6E5C9200BC3FA9 /* ListViewController.m */; };
 		8E018F3AC3E4E954420E0F47 /* libPods-MusicBrainzTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3EDEAEFD32F71337097ADA /* libPods-MusicBrainzTests.a */; };
 		BAE962DD7D89D350B09CDD0B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C66993803EA8E2DDE3EA24 /* libPods.a */; };
-		EE2B62B31B4A0F0A003AFDF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2B62B21B4A0F0A003AFDF9 /* main.m */; };
+		EE2A32271BAF87AA00A7637A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE2A32251BAF87AA00A7637A /* LaunchScreen.xib */; settings = {ASSET_TAGS = (); }; };
+		EE2A32281BAF87AA00A7637A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE2A32261BAF87AA00A7637A /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		EE2A322A1BAF88AD00A7637A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2A32291BAF88AD00A7637A /* main.m */; settings = {ASSET_TAGS = (); }; };
+		EE2A32431BAF88C000A7637A /* AppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2A322D1BAF88C000A7637A /* AppViewController.m */; settings = {ASSET_TAGS = (); }; };
+		EE2A32441BAF88C000A7637A /* AppViewSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2A322F1BAF88C000A7637A /* AppViewSearchController.m */; settings = {ASSET_TAGS = (); }; };
+		EE2A32451BAF88C000A7637A /* AppViewSearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2A32311BAF88C000A7637A /* AppViewSearchManager.m */; settings = {ASSET_TAGS = (); }; };
+		EE2A32461BAF88C000A7637A /* AppViewSearchParamsController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2A32331BAF88C000A7637A /* AppViewSearchParamsController.m */; settings = {ASSET_TAGS = (); }; };
+		EE2A32471BAF88C000A7637A /* AppViewSearchParamsController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE2A32341BAF88C000A7637A /* AppViewSearchParamsController.storyboard */; settings = {ASSET_TAGS = (); }; };
+		EE2A32481BAF88C000A7637A /* ArtistCellAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2A32371BAF88C000A7637A /* ArtistCellAccessoryView.m */; settings = {ASSET_TAGS = (); }; };
+		EE2A32491BAF88C000A7637A /* ArtistCellAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE2A32381BAF88C000A7637A /* ArtistCellAccessoryView.xib */; settings = {ASSET_TAGS = (); }; };
+		EE2A324A1BAF88C000A7637A /* UITableViewCell+ArtistCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2A323A1BAF88C000A7637A /* UITableViewCell+ArtistCell.m */; settings = {ASSET_TAGS = (); }; };
+		EE2A324E1BAF88C000A7637A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2A32411BAF88C000A7637A /* SearchViewController.m */; settings = {ASSET_TAGS = (); }; };
+		EE2A324F1BAF88C000A7637A /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE2A32421BAF88C000A7637A /* SearchViewController.storyboard */; settings = {ASSET_TAGS = (); }; };
+		EE2A32541BAF891C00A7637A /* SegmentsController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2A32521BAF891C00A7637A /* SegmentsController.m */; settings = {ASSET_TAGS = (); }; };
+		EE2A32551BAF891C00A7637A /* HomeController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE2A32531BAF891C00A7637A /* HomeController.storyboard */; settings = {ASSET_TAGS = (); }; };
+		EE2A325A1BAFA05B00A7637A /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2A32591BAFA05B00A7637A /* HomeController.m */; settings = {ASSET_TAGS = (); }; };
+		EE2A32711BAFA4B500A7637A /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2A326D1BAFA4B500A7637A /* ListViewController.m */; settings = {ASSET_TAGS = (); }; };
+		EE2A32721BAFA4B500A7637A /* ListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE2A326E1BAFA4B500A7637A /* ListViewController.storyboard */; settings = {ASSET_TAGS = (); }; };
+		EE2A32731BAFA4B500A7637A /* ListViewDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2A32701BAFA4B500A7637A /* ListViewDataLoader.m */; settings = {ASSET_TAGS = (); }; };
+		EE2A32761BAFA4D300A7637A /* ArtistListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2A32751BAFA4D300A7637A /* ArtistListViewController.m */; settings = {ASSET_TAGS = (); }; };
+		EE2A32791BAFA76C00A7637A /* PageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2A32781BAFA76C00A7637A /* PageListViewController.m */; settings = {ASSET_TAGS = (); }; };
 		EE2B62B61B4A0F0A003AFDF9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2B62B51B4A0F0A003AFDF9 /* AppDelegate.m */; };
-		EE2B62BF1B4A0F0A003AFDF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE2B62BD1B4A0F0A003AFDF9 /* Main.storyboard */; };
 		EE2B62C11B4A0F0A003AFDF9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE2B62C01B4A0F0A003AFDF9 /* Images.xcassets */; };
-		EE2B62C41B4A0F0A003AFDF9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE2B62C21B4A0F0A003AFDF9 /* LaunchScreen.xib */; };
 		EE2B62D01B4A0F0A003AFDF9 /* MusicBrainzTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2B62CF1B4A0F0A003AFDF9 /* MusicBrainzTests.m */; };
 		EE2B62DC1B4A0FE4003AFDF9 /* RawResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2B62DB1B4A0FE4003AFDF9 /* RawResponse.m */; };
 		EE2B62DF1B4A127C003AFDF9 /* MbzResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2B62DE1B4A127C003AFDF9 /* MbzResponse.m */; };
@@ -37,7 +43,6 @@
 		EE2B62F21B4A8198003AFDF9 /* MbzApi+WebServiceSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2B62F11B4A8198003AFDF9 /* MbzApi+WebServiceSearch.m */; };
 		EE2B62F51B4B744E003AFDF9 /* MbzApi+WebServiceLookup.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2B62F41B4B744E003AFDF9 /* MbzApi+WebServiceLookup.m */; };
 		EE2B62F81B4B91AD003AFDF9 /* MbzApi+WebServiceBrowse.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2B62F71B4B91AD003AFDF9 /* MbzApi+WebServiceBrowse.m */; };
-		EE2B63E81B4D14CB003AFDF9 /* AppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2B63E71B4D14CB003AFDF9 /* AppViewController.m */; };
 		EE790E8B1B5CF0EE0010F654 /* MbzDataArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = EE790E8A1B5CF0EE0010F654 /* MbzDataArtist.m */; };
 		EE790E8E1B5CF1E70010F654 /* MbzDataArea.m in Sources */ = {isa = PBXBuildFile; fileRef = EE790E8D1B5CF1E70010F654 /* MbzDataArea.m */; };
 		EE790E911B5CF2BB0010F654 /* MbzDataLifeSpan.m in Sources */ = {isa = PBXBuildFile; fileRef = EE790E901B5CF2BB0010F654 /* MbzDataLifeSpan.m */; };
@@ -61,38 +66,49 @@
 /* Begin PBXFileReference section */
 		0D856C4CD464E298E788A751 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		39C66993803EA8E2DDE3EA24 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		461D49C41B764E2D00AEDBD6 /* ArtistCellAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistCellAccessoryView.h; sourceTree = "<group>"; };
-		461D49C51B764E2D00AEDBD6 /* ArtistCellAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistCellAccessoryView.m; sourceTree = "<group>"; };
-		461D49C61B764E2D00AEDBD6 /* ArtistCellAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtistCellAccessoryView.xib; sourceTree = "<group>"; };
-		461D49C71B764E2D00AEDBD6 /* UITableViewCell+ArtistCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+ArtistCell.h"; sourceTree = "<group>"; };
-		461D49C81B764E2D00AEDBD6 /* UITableViewCell+ArtistCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+ArtistCell.m"; sourceTree = "<group>"; };
-		466587F31B723AB90046F23D /* ListViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ListViewController.storyboard; sourceTree = "<group>"; };
-		466587F51B723BDA0046F23D /* AppViewSearchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppViewSearchManager.h; sourceTree = "<group>"; };
-		466587F61B723BDA0046F23D /* AppViewSearchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppViewSearchManager.m; sourceTree = "<group>"; };
-		466587F81B72459F0046F23D /* AppViewSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppViewSearchController.h; sourceTree = "<group>"; };
-		466587F91B72459F0046F23D /* AppViewSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppViewSearchController.m; sourceTree = "<group>"; };
-		466587FB1B7246EA0046F23D /* AppViewSearchParamsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppViewSearchParamsController.h; sourceTree = "<group>"; };
-		466587FC1B7246EA0046F23D /* AppViewSearchParamsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppViewSearchParamsController.m; sourceTree = "<group>"; };
-		466587FE1B724E840046F23D /* AppViewSearchParamsController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AppViewSearchParamsController.storyboard; sourceTree = "<group>"; };
-		46A82DED1B70F34500FE793E /* ListViewDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewDataLoader.h; sourceTree = "<group>"; };
-		46A82DEE1B70F34500FE793E /* ListViewDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewDataLoader.m; sourceTree = "<group>"; };
-		46C71F121B777AC500319A35 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
-		46C71F131B777AC500319A35 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
-		46C71F151B777AD800319A35 /* SearchViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
-		46E8504E1B6E5C9200BC3FA9 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
-		46E8504F1B6E5C9200BC3FA9 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		83F436815BE520975842734A /* Pods-MusicBrainzTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicBrainzTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicBrainzTests/Pods-MusicBrainzTests.release.xcconfig"; sourceTree = "<group>"; };
 		AE3EDEAEFD32F71337097ADA /* libPods-MusicBrainzTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MusicBrainzTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4DF41742366606D6141C36 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D1562BFF3AE5DA40FC3213F5 /* Pods-MusicBrainzTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicBrainzTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicBrainzTests/Pods-MusicBrainzTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EE2A32251BAF87AA00A7637A /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		EE2A32261BAF87AA00A7637A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		EE2A32291BAF88AD00A7637A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EE2A322C1BAF88C000A7637A /* AppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppViewController.h; sourceTree = "<group>"; };
+		EE2A322D1BAF88C000A7637A /* AppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppViewController.m; sourceTree = "<group>"; };
+		EE2A322E1BAF88C000A7637A /* AppViewSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppViewSearchController.h; sourceTree = "<group>"; };
+		EE2A322F1BAF88C000A7637A /* AppViewSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppViewSearchController.m; sourceTree = "<group>"; };
+		EE2A32301BAF88C000A7637A /* AppViewSearchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppViewSearchManager.h; sourceTree = "<group>"; };
+		EE2A32311BAF88C000A7637A /* AppViewSearchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppViewSearchManager.m; sourceTree = "<group>"; };
+		EE2A32321BAF88C000A7637A /* AppViewSearchParamsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppViewSearchParamsController.h; sourceTree = "<group>"; };
+		EE2A32331BAF88C000A7637A /* AppViewSearchParamsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppViewSearchParamsController.m; sourceTree = "<group>"; };
+		EE2A32341BAF88C000A7637A /* AppViewSearchParamsController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AppViewSearchParamsController.storyboard; sourceTree = "<group>"; };
+		EE2A32361BAF88C000A7637A /* ArtistCellAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistCellAccessoryView.h; sourceTree = "<group>"; };
+		EE2A32371BAF88C000A7637A /* ArtistCellAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistCellAccessoryView.m; sourceTree = "<group>"; };
+		EE2A32381BAF88C000A7637A /* ArtistCellAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtistCellAccessoryView.xib; sourceTree = "<group>"; };
+		EE2A32391BAF88C000A7637A /* UITableViewCell+ArtistCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+ArtistCell.h"; sourceTree = "<group>"; };
+		EE2A323A1BAF88C000A7637A /* UITableViewCell+ArtistCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+ArtistCell.m"; sourceTree = "<group>"; };
+		EE2A32401BAF88C000A7637A /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		EE2A32411BAF88C000A7637A /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		EE2A32421BAF88C000A7637A /* SearchViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
+		EE2A32511BAF891C00A7637A /* SegmentsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentsController.h; sourceTree = "<group>"; };
+		EE2A32521BAF891C00A7637A /* SegmentsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentsController.m; sourceTree = "<group>"; };
+		EE2A32531BAF891C00A7637A /* HomeController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomeController.storyboard; sourceTree = "<group>"; };
+		EE2A32581BAFA05B00A7637A /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
+		EE2A32591BAFA05B00A7637A /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
+		EE2A326C1BAFA4B500A7637A /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		EE2A326D1BAFA4B500A7637A /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		EE2A326E1BAFA4B500A7637A /* ListViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ListViewController.storyboard; sourceTree = "<group>"; };
+		EE2A326F1BAFA4B500A7637A /* ListViewDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewDataLoader.h; sourceTree = "<group>"; };
+		EE2A32701BAFA4B500A7637A /* ListViewDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewDataLoader.m; sourceTree = "<group>"; };
+		EE2A32741BAFA4D300A7637A /* ArtistListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistListViewController.h; sourceTree = "<group>"; };
+		EE2A32751BAFA4D300A7637A /* ArtistListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistListViewController.m; sourceTree = "<group>"; };
+		EE2A32771BAFA76C00A7637A /* PageListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageListViewController.h; sourceTree = "<group>"; };
+		EE2A32781BAFA76C00A7637A /* PageListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageListViewController.m; sourceTree = "<group>"; };
 		EE2B62AD1B4A0F0A003AFDF9 /* MusicBrainz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicBrainz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE2B62B11B4A0F0A003AFDF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE2B62B21B4A0F0A003AFDF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EE2B62B41B4A0F0A003AFDF9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EE2B62B51B4A0F0A003AFDF9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EE2B62BE1B4A0F0A003AFDF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE2B62C01B4A0F0A003AFDF9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		EE2B62C31B4A0F0A003AFDF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EE2B62C91B4A0F0A003AFDF9 /* MusicBrainzTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicBrainzTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE2B62CE1B4A0F0A003AFDF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE2B62CF1B4A0F0A003AFDF9 /* MusicBrainzTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicBrainzTests.m; sourceTree = "<group>"; };
@@ -117,8 +133,6 @@
 		EE2B62F41B4B744E003AFDF9 /* MbzApi+WebServiceLookup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MbzApi+WebServiceLookup.m"; sourceTree = "<group>"; };
 		EE2B62F61B4B91AD003AFDF9 /* MbzApi+WebServiceBrowse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MbzApi+WebServiceBrowse.h"; sourceTree = "<group>"; };
 		EE2B62F71B4B91AD003AFDF9 /* MbzApi+WebServiceBrowse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MbzApi+WebServiceBrowse.m"; sourceTree = "<group>"; };
-		EE2B63E61B4D14CB003AFDF9 /* AppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppViewController.h; sourceTree = "<group>"; };
-		EE2B63E71B4D14CB003AFDF9 /* AppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppViewController.m; sourceTree = "<group>"; };
 		EE790E891B5CF0EE0010F654 /* MbzDataArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MbzDataArtist.h; sourceTree = "<group>"; };
 		EE790E8A1B5CF0EE0010F654 /* MbzDataArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MbzDataArtist.m; sourceTree = "<group>"; };
 		EE790E8C1B5CF1E70010F654 /* MbzDataArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MbzDataArea.h; sourceTree = "<group>"; };
@@ -157,18 +171,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		461D49C31B764E2D00AEDBD6 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				461D49C41B764E2D00AEDBD6 /* ArtistCellAccessoryView.h */,
-				461D49C51B764E2D00AEDBD6 /* ArtistCellAccessoryView.m */,
-				461D49C61B764E2D00AEDBD6 /* ArtistCellAccessoryView.xib */,
-				461D49C71B764E2D00AEDBD6 /* UITableViewCell+ArtistCell.h */,
-				461D49C81B764E2D00AEDBD6 /* UITableViewCell+ArtistCell.m */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
 		5F06CBD03F52A50A4CD72BB7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +189,94 @@
 				83F436815BE520975842734A /* Pods-MusicBrainzTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		EE2A32241BAF870400A7637A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EE2A32291BAF88AD00A7637A /* main.m */,
+				EE2B62C01B4A0F0A003AFDF9 /* Images.xcassets */,
+				EE2B62B11B4A0F0A003AFDF9 /* Info.plist */,
+				EE2A32251BAF87AA00A7637A /* LaunchScreen.xib */,
+				EE2A32261BAF87AA00A7637A /* Main.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EE2A322B1BAF88C000A7637A /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				EE2A322C1BAF88C000A7637A /* AppViewController.h */,
+				EE2A322D1BAF88C000A7637A /* AppViewController.m */,
+				EE2A322E1BAF88C000A7637A /* AppViewSearchController.h */,
+				EE2A322F1BAF88C000A7637A /* AppViewSearchController.m */,
+				EE2A32301BAF88C000A7637A /* AppViewSearchManager.h */,
+				EE2A32311BAF88C000A7637A /* AppViewSearchManager.m */,
+				EE2A32321BAF88C000A7637A /* AppViewSearchParamsController.h */,
+				EE2A32331BAF88C000A7637A /* AppViewSearchParamsController.m */,
+				EE2A32341BAF88C000A7637A /* AppViewSearchParamsController.storyboard */,
+				EE2A32351BAF88C000A7637A /* Cells */,
+				EE2A32401BAF88C000A7637A /* SearchViewController.h */,
+				EE2A32411BAF88C000A7637A /* SearchViewController.m */,
+				EE2A32421BAF88C000A7637A /* SearchViewController.storyboard */,
+			);
+			path = Old;
+			sourceTree = "<group>";
+		};
+		EE2A32351BAF88C000A7637A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EE2A32361BAF88C000A7637A /* ArtistCellAccessoryView.h */,
+				EE2A32371BAF88C000A7637A /* ArtistCellAccessoryView.m */,
+				EE2A32381BAF88C000A7637A /* ArtistCellAccessoryView.xib */,
+				EE2A32391BAF88C000A7637A /* UITableViewCell+ArtistCell.h */,
+				EE2A323A1BAF88C000A7637A /* UITableViewCell+ArtistCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		EE2A32501BAF891C00A7637A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EE2A32581BAFA05B00A7637A /* HomeController.h */,
+				EE2A32591BAFA05B00A7637A /* HomeController.m */,
+				EE2A32531BAF891C00A7637A /* HomeController.storyboard */,
+				EE2A32511BAF891C00A7637A /* SegmentsController.h */,
+				EE2A32521BAF891C00A7637A /* SegmentsController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EE2A32601BAFA2BF00A7637A /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				EE2A326C1BAFA4B500A7637A /* ListViewController.h */,
+				EE2A326D1BAFA4B500A7637A /* ListViewController.m */,
+				EE2A326E1BAFA4B500A7637A /* ListViewController.storyboard */,
+				EE2A326F1BAFA4B500A7637A /* ListViewDataLoader.h */,
+				EE2A32701BAFA4B500A7637A /* ListViewDataLoader.m */,
+				EE2A32771BAFA76C00A7637A /* PageListViewController.h */,
+				EE2A32781BAFA76C00A7637A /* PageListViewController.m */,
+				EE2A32611BAFA2DC00A7637A /* Artist */,
+				EE2A32681BAFA3B400A7637A /* Release */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		EE2A32611BAFA2DC00A7637A /* Artist */ = {
+			isa = PBXGroup;
+			children = (
+				EE2A32741BAFA4D300A7637A /* ArtistListViewController.h */,
+				EE2A32751BAFA4D300A7637A /* ArtistListViewController.m */,
+			);
+			path = Artist;
+			sourceTree = "<group>";
+		};
+		EE2A32681BAFA3B400A7637A /* Release */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Release;
 			sourceTree = "<group>";
 		};
 		EE2B62A41B4A0F0A003AFDF9 = {
@@ -216,39 +306,12 @@
 			children = (
 				EE2B62B41B4A0F0A003AFDF9 /* AppDelegate.h */,
 				EE2B62B51B4A0F0A003AFDF9 /* AppDelegate.m */,
-				EE2B63E61B4D14CB003AFDF9 /* AppViewController.h */,
-				EE2B63E71B4D14CB003AFDF9 /* AppViewController.m */,
-				466587F51B723BDA0046F23D /* AppViewSearchManager.h */,
-				466587F61B723BDA0046F23D /* AppViewSearchManager.m */,
-				466587F81B72459F0046F23D /* AppViewSearchController.h */,
-				466587F91B72459F0046F23D /* AppViewSearchController.m */,
-				466587FB1B7246EA0046F23D /* AppViewSearchParamsController.h */,
-				466587FC1B7246EA0046F23D /* AppViewSearchParamsController.m */,
-				466587FE1B724E840046F23D /* AppViewSearchParamsController.storyboard */,
-				46C71F121B777AC500319A35 /* SearchViewController.h */,
-				46C71F131B777AC500319A35 /* SearchViewController.m */,
-				46C71F151B777AD800319A35 /* SearchViewController.storyboard */,
-				46E8504E1B6E5C9200BC3FA9 /* ListViewController.h */,
-				46E8504F1B6E5C9200BC3FA9 /* ListViewController.m */,
-				466587F31B723AB90046F23D /* ListViewController.storyboard */,
-				46A82DED1B70F34500FE793E /* ListViewDataLoader.h */,
-				46A82DEE1B70F34500FE793E /* ListViewDataLoader.m */,
-				EE2B62BD1B4A0F0A003AFDF9 /* Main.storyboard */,
-				EE2B62C01B4A0F0A003AFDF9 /* Images.xcassets */,
-				EE2B62C21B4A0F0A003AFDF9 /* LaunchScreen.xib */,
-				461D49C31B764E2D00AEDBD6 /* Cells */,
-				EE2B62B01B4A0F0A003AFDF9 /* Supporting Files */,
+				EE2A32501BAF891C00A7637A /* Home */,
+				EE2A32601BAFA2BF00A7637A /* Pages */,
+				EE2A322B1BAF88C000A7637A /* Old */,
+				EE2A32241BAF870400A7637A /* Resources */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		EE2B62B01B4A0F0A003AFDF9 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				EE2B62B11B4A0F0A003AFDF9 /* Info.plist */,
-				EE2B62B21B4A0F0A003AFDF9 /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		EE2B62CC1B4A0F0A003AFDF9 /* MusicBrainzTests */ = {
@@ -412,13 +475,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE2B62BF1B4A0F0A003AFDF9 /* Main.storyboard in Resources */,
-				EE2B62C41B4A0F0A003AFDF9 /* LaunchScreen.xib in Resources */,
-				461D49CA1B764E2D00AEDBD6 /* ArtistCellAccessoryView.xib in Resources */,
-				46C71F161B777AD800319A35 /* SearchViewController.storyboard in Resources */,
+				EE2A32271BAF87AA00A7637A /* LaunchScreen.xib in Resources */,
+				EE2A32491BAF88C000A7637A /* ArtistCellAccessoryView.xib in Resources */,
+				EE2A32471BAF88C000A7637A /* AppViewSearchParamsController.storyboard in Resources */,
+				EE2A324F1BAF88C000A7637A /* SearchViewController.storyboard in Resources */,
 				EE2B62C11B4A0F0A003AFDF9 /* Images.xcassets in Resources */,
-				466587F41B723AB90046F23D /* ListViewController.storyboard in Resources */,
-				466587FF1B724E840046F23D /* AppViewSearchParamsController.storyboard in Resources */,
+				EE2A32551BAF891C00A7637A /* HomeController.storyboard in Resources */,
+				EE2A32281BAF87AA00A7637A /* Main.storyboard in Resources */,
+				EE2A32721BAFA4B500A7637A /* ListViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,34 +563,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE2A324A1BAF88C000A7637A /* UITableViewCell+ArtistCell.m in Sources */,
+				EE2A32441BAF88C000A7637A /* AppViewSearchController.m in Sources */,
 				EE790E8B1B5CF0EE0010F654 /* MbzDataArtist.m in Sources */,
+				EE2A324E1BAF88C000A7637A /* SearchViewController.m in Sources */,
 				EE2B62B61B4A0F0A003AFDF9 /* AppDelegate.m in Sources */,
 				EE790E941B5CF5370010F654 /* MbzData.m in Sources */,
+				EE2A32461BAF88C000A7637A /* AppViewSearchParamsController.m in Sources */,
+				EE2A32761BAFA4D300A7637A /* ArtistListViewController.m in Sources */,
+				EE2A32791BAFA76C00A7637A /* PageListViewController.m in Sources */,
 				EE2B62F81B4B91AD003AFDF9 /* MbzApi+WebServiceBrowse.m in Sources */,
-				46C71F141B777AC500319A35 /* SearchViewController.m in Sources */,
+				EE2A32431BAF88C000A7637A /* AppViewController.m in Sources */,
 				EEE6F9321B6084300008AB43 /* UIImage+ImageWithColor.m in Sources */,
+				EE2A32481BAF88C000A7637A /* ArtistCellAccessoryView.m in Sources */,
 				EE2B62DF1B4A127C003AFDF9 /* MbzResponse.m in Sources */,
-				466587FA1B72459F0046F23D /* AppViewSearchController.m in Sources */,
 				EE2B62F21B4A8198003AFDF9 /* MbzApi+WebServiceSearch.m in Sources */,
+				EE2A325A1BAFA05B00A7637A /* HomeController.m in Sources */,
+				EE2A32451BAF88C000A7637A /* AppViewSearchManager.m in Sources */,
 				EEE6F92C1B5F4A2B0008AB43 /* UIView+LoadFromNib.m in Sources */,
-				461D49C91B764E2D00AEDBD6 /* ArtistCellAccessoryView.m in Sources */,
-				466587FD1B7246EA0046F23D /* AppViewSearchParamsController.m in Sources */,
 				EE790E8E1B5CF1E70010F654 /* MbzDataArea.m in Sources */,
 				EE2B62EF1B4A72D1003AFDF9 /* NSString+DoubleQuotesString.m in Sources */,
 				EE2B62E21B4A12E4003AFDF9 /* MbzError.m in Sources */,
-				EE2B62B31B4A0F0A003AFDF9 /* main.m in Sources */,
 				EE2B62DC1B4A0FE4003AFDF9 /* RawResponse.m in Sources */,
+				EE2A32711BAFA4B500A7637A /* ListViewController.m in Sources */,
 				EE2B62E51B4A15FF003AFDF9 /* MbzApi.m in Sources */,
 				EE2B62EC1B4A5D2A003AFDF9 /* NSString+URLQueryString.m in Sources */,
-				46A82DEF1B70F34500FE793E /* ListViewDataLoader.m in Sources */,
-				46E850501B6E5C9200BC3FA9 /* ListViewController.m in Sources */,
 				EE2B62F51B4B744E003AFDF9 /* MbzApi+WebServiceLookup.m in Sources */,
 				EE2B62E91B4A24C5003AFDF9 /* MbzApi+WebService.m in Sources */,
-				EE2B63E81B4D14CB003AFDF9 /* AppViewController.m in Sources */,
-				466587F71B723BDA0046F23D /* AppViewSearchManager.m in Sources */,
 				EE790E9D1B5CFBE50010F654 /* MbzDataAliase.m in Sources */,
 				EE790E9A1B5CFA4E0010F654 /* MbzDataTag.m in Sources */,
-				461D49CB1B764E2D00AEDBD6 /* UITableViewCell+ArtistCell.m in Sources */,
+				EE2A322A1BAF88AD00A7637A /* main.m in Sources */,
+				EE2A32731BAFA4B500A7637A /* ListViewDataLoader.m in Sources */,
+				EE2A32541BAF891C00A7637A /* SegmentsController.m in Sources */,
 				EE790E911B5CF2BB0010F654 /* MbzDataLifeSpan.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,25 +616,6 @@
 			targetProxy = EE2B62CA1B4A0F0A003AFDF9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		EE2B62BD1B4A0F0A003AFDF9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EE2B62BE1B4A0F0A003AFDF9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		EE2B62C21B4A0F0A003AFDF9 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EE2B62C31B4A0F0A003AFDF9 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EE2B62D11B4A0F0A003AFDF9 /* Debug */ = {
@@ -658,7 +707,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = App/Info.plist;
+				INFOPLIST_FILE = App/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -672,7 +721,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = App/Info.plist;
+				INFOPLIST_FILE = App/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
