@@ -26,6 +26,12 @@
     self.tableView.tableFooterView = self.searchController.searchBar;
 }
 
+#pragma mark to be overriden
+
+- (void)searchWithQuery:(NSString *)query {
+    NSLog(@"to search: %@", query);
+}
+
 #pragma mark <UISearchControllerDelegate>
 
 - (void)willPresentSearchController:(UISearchController *)searchController {
@@ -36,6 +42,17 @@
 - (void)willDismissSearchController:(UISearchController *)searchController {
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"willDismissSearchController" object:self userInfo:@{@"UISearchController":searchController}];
+}
+
+#pragma mark <UISearchBarDelegate>
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self searchWithQuery:searchBar.text];
+    
+    searchBar.placeholder = searchBar.text;
+    searchBar.text = nil;
+    
+    self.searchController.active = NO;
 }
 
 @end

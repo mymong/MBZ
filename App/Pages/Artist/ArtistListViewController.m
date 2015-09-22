@@ -19,4 +19,10 @@
     
 }
 
+- (void)searchWithQuery:(NSString *)query {
+    ListViewDataLoader *dataLoader = [ListViewDataLoader dataLoaderForSearchWithEntity:@"artist" query:query];
+    self.dataLoader = dataLoader;
+    [dataLoader reload];
+}
+
 @end

@@ -10,4 +10,6 @@
 
 @interface PageListViewController : ListViewController <UISearchControllerDelegate, UISearchBarDelegate>
 
+- (void)searchWithQuery:(NSString *)query;
+
 @end
