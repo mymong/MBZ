@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  HomeViewController.h
 //  MusicBrainz
 //
 //  Created by Jason Yang on 15-09-23.
@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-
+@interface HomeViewController : UIViewController
 
 @end
 
+@interface HomeViewSegmentBar : UIView
+
+@end

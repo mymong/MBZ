@@ -2,24 +2,24 @@
 //  ListViewController.m
 //  MusicBrainz
 //
-//  Created by Yang Jason on 15/8/2.
-//  Copyright (c) 2015年 nero. All rights reserved.
+//  Created by Jason Yang on 15-09-23.
+//  Copyright © 2015年 yg. All rights reserved.
 //
 
 #import "ListViewController.h"
 #import "MbzApi+WebServiceSearch.h"
 
 @interface ListViewController ()
-
+@property (nonatomic,readonly) NSString *defaultCellIdentifier;
 @end
 
 @implementation ListViewController
 
-+ (instancetype)loadFromStoryboard {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:NSStringFromClass(self.class) bundle:nil];
-    id vc = [sb instantiateInitialViewController];
-    NSParameterAssert([vc isKindOfClass:self.class]);
-    return vc;
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    _defaultCellIdentifier = @"defaultCellIdentifier";
+    [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:self.defaultCellIdentifier];
 }
 
 - (void)setDataLoader:(ListViewDataLoader *)dataLoader {
@@ -58,7 +58,7 @@
     ListViewDataSection *sect = self.dataLoader.sections[indexPath.section];
     ListViewDataItem *item = sect.items[indexPath.row];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.defaultCellIdentifier forIndexPath:indexPath];
     cell.textLabel.text = item.title;
     cell.detailTextLabel.text = item.subtitle;
     
@@ -87,7 +87,7 @@
     if (item.detail) {
         UINavigationController *navigationController = self.navigationController;
         
-        ListViewController *viewController = [ListViewController loadFromStoryboard];
+        ListViewController *viewController = [ListViewController new];
         if (viewController) {
             ListViewDataLoader *dataLoader = [ListViewDataLoader dataLoaderForDetail:item.detail withEntity:item.entity];
             viewController.dataLoader = dataLoader;
@@ -106,7 +106,7 @@
     if (item.entity && item.mbid) {
         UINavigationController *navigationController = self.navigationController;
         
-        ListViewController *viewController = [ListViewController loadFromStoryboard];
+        ListViewController *viewController = [ListViewController new];
         if (viewController) {
             ListViewDataLoader *dataLoader = [ListViewDataLoader dataLoaderForLookupWithEntity:item.entity mbid:item.mbid];
             viewController.dataLoader = dataLoader;

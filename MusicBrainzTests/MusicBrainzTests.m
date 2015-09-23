@@ -2,11 +2,10 @@
 //  MusicBrainzTests.m
 //  MusicBrainzTests
 //
-//  Created by Jason Yang on 7/6/15.
-//  Copyright (c) 2015 nero. All rights reserved.
+//  Created by Jason Yang on 15-09-23.
+//  Copyright © 2015年 yg. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
 @interface MusicBrainzTests : XCTestCase
@@ -27,7 +26,7 @@
 
 - (void)testExample {
     // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
 }
 
 - (void)testPerformanceExample {

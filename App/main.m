@@ -2,8 +2,8 @@
 //  main.m
 //  MusicBrainz
 //
-//  Created by Jason Yang on 7/6/15.
-//  Copyright (c) 2015 nero. All rights reserved.
+//  Created by Jason Yang on 15-09-23.
+//  Copyright © 2015年 yg. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

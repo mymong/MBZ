@@ -2,16 +2,14 @@
 //  ListViewController.h
 //  MusicBrainz
 //
-//  Created by Yang Jason on 15/8/2.
-//  Copyright (c) 2015年 nero. All rights reserved.
+//  Created by Jason Yang on 15-09-23.
+//  Copyright © 2015年 yg. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "ListViewDataLoader.h"
 
 @interface ListViewController : UITableViewController <ListViewDataLoaderDelegate>
-
-+ (instancetype)loadFromStoryboard;
 
 @property (nonatomic) ListViewDataLoader *dataLoader;
 

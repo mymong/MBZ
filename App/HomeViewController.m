@@ -1,24 +1,26 @@
 //
-//  SegmentsController.m
+//  HomeViewController.m
+//  MusicBrainz
 //
-//  Created by Jason Yang on 15-09-15.
-//  Copyright (c) 2015年 Jason Yang. All rights reserved.
+//  Created by Jason Yang on 15-09-23.
+//  Copyright © 2015年 yg. All rights reserved.
 //
 
-#import "SegmentsController.h"
+#import "HomeViewController.h"
 #import "HMSegmentedControl.h"
 
-@interface SegmentsController () <UISearchBarDelegate>
+@interface HomeViewController ()
+@property (weak, nonatomic) IBOutlet HomeViewSegmentBar *segmentBar;
 @property (weak, nonatomic) IBOutlet UIView *tabBarContainer;
 @end
 
-@interface SegmentsBar ()
+@interface HomeViewSegmentBar ()
 @property (nonatomic) HMSegmentedControl *segmentedControl;
-@property (weak, nonatomic) SegmentsController *ownerController;
+@property (weak, nonatomic) HomeViewController *viewController;
 @property (weak, nonatomic) UITabBarController *tabBarController;
 @end
 
-@implementation SegmentsController
+@implementation HomeViewController
 {
     UITabBarController *_tabBarController; // override super.tabBarController
 }
@@ -36,8 +38,8 @@
     }
     
     // setup SegmentsView and bind with TabBarController.
-    self.segmentsBar.ownerController = self;
-    self.segmentsBar.tabBarController = self.tabBarController; // bind TabBarController with SegmentedControl.
+    self.segmentBar.viewController = self;
+    self.segmentBar.tabBarController = self.tabBarController; // bind TabBarController with SegmentedControl.
     
     if (self.navigationController.navigationBar) {
         // remove bottom shadow line of NavigationBar.
@@ -45,10 +47,8 @@
         [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     }
     
-    if (self.navigationController.toolbar) {
-        // observe Toolbar.hidden so that we can correct the view rect of TabBarController.
-        [self.navigationController.toolbar addObserver:self forKeyPath:@"hidden" options:NSKeyValueObservingOptionNew context:NULL];
-    }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onSearchControllerWillPresent:) name:@"willPresentSearchController" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onSearchControllerWillDismiss:) name:@"willDismissSearchController" object:nil];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -57,23 +57,17 @@
     [self layoutTabBarContainer];
 }
 
-#pragma mark
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if ([keyPath isEqualToString:@"hidden"] && [object isKindOfClass:UIToolbar.class]) {
-        [self layoutTabBarContainer];
-    }
-}
+#pragma mark For TabBarController
 
 - (void)layoutTabBarContainer {
     if (!self.navigationController.toolbar || self.navigationController.toolbar.hidden) {
         CGRect frame = self.tabBarContainer.frame;
-        frame.size = CGSizeMake(frame.size.width, self.view.bounds.size.height - self.segmentsBar.frame.origin.y - self.segmentsBar.frame.size.height);
+        frame.size = CGSizeMake(frame.size.width, self.view.bounds.size.height - self.segmentBar.frame.origin.y - self.segmentBar.frame.size.height);
         self.tabBarContainer.frame = frame;
     }
     else {
         CGRect frame = self.tabBarContainer.frame;
-        frame.size = CGSizeMake(frame.size.width, self.view.bounds.size.height - self.segmentsBar.frame.origin.y - self.segmentsBar.frame.size.height - self.navigationController.toolbar.frame.size.height);
+        frame.size = CGSizeMake(frame.size.width, self.view.bounds.size.height - self.segmentBar.frame.origin.y - self.segmentBar.frame.size.height - self.navigationController.toolbar.frame.size.height);
         self.tabBarContainer.frame = frame;
     }
 }
@@ -94,19 +88,22 @@
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     // TODO
+    NSLog(@"didSelectViewController: %@", viewController.title);
+}
+
+#pragma mark Notification Receivers
+
+- (void)onSearchControllerWillPresent:(NSNotification *)notification {
+    self.segmentBar.segmentedControl.touchEnabled = NO;
+}
+
+- (void)onSearchControllerWillDismiss:(NSNotification *)notification {
+    self.segmentBar.segmentedControl.touchEnabled = YES;
 }
 
 @end
 
-@implementation SegmentsBar
-
-- (BOOL)locked {
-    return !self.segmentedControl.touchEnabled;
-}
-
-- (void)setLocked:(BOOL)locked {
-    self.segmentedControl.touchEnabled = !locked;
-}
+@implementation HomeViewSegmentBar
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -142,7 +139,7 @@
             }
         }
         else {
-            [titles addObject:@"(?)"];
+            [titles addObjectsFromArray:@[@"(A)", @"(B)", @"(C)"]];
         }
         self.segmentedControl.sectionTitles = titles;
         if (NSNotFound != tabBarController.selectedIndex) {
@@ -158,7 +155,7 @@
         if (tabBarController.selectedIndex != control.selectedSegmentIndex) {
             tabBarController.selectedIndex = control.selectedSegmentIndex;
             
-            [self.ownerController tabBarController:tabBarController didSelectViewController:tabBarController.selectedViewController];
+            [self.viewController tabBarController:tabBarController didSelectViewController:tabBarController.selectedViewController];
         }
     }
 }
