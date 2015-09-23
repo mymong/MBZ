@@ -21,15 +21,24 @@
     self.searchController.delegate = self;
     self.searchController.searchBar.delegate = self;
     self.searchController.hidesNavigationBarDuringPresentation = NO;
-    
     [self.searchController.searchBar sizeToFit];
-    self.tableView.tableHeaderView = self.searchController.searchBar;
+    
+    if (self.searchEnabled) {
+        self.tableView.tableHeaderView = self.searchController.searchBar;
+    }
 }
 
-#pragma mark to be overriden
+- (void)setSearchEnabled:(BOOL)searchEnabled {
+    if (_searchEnabled != searchEnabled) {
+        self.tableView.tableHeaderView = searchEnabled ? self.searchController.searchBar : nil;
+        _searchEnabled = searchEnabled;
+    }
+}
 
 - (void)performSearchWithText:(NSString *)text {
-    NSLog(@"to perform search: %@", text);
+    ListViewDataLoader *dataLoader = [ListViewDataLoader dataLoaderForSearchWithEntity:self.searchEntity query:text];
+    self.dataLoader = dataLoader;
+    [dataLoader reload];
 }
 
 #pragma mark <UISearchControllerDelegate>

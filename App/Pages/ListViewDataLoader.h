@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 nero. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "MbzApi+WebService.h"
 
 @class ListViewDataLoader;
 

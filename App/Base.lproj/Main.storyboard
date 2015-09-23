@@ -84,6 +84,9 @@
                     <connections>
                         <segue destination="sar-cE-Xvk" kind="relationship" relationship="viewControllers" id="Tun-vU-x55"/>
                         <segue destination="a54-TP-CNd" kind="relationship" relationship="viewControllers" id="TLD-sK-mwO"/>
+                        <segue destination="s57-Pm-LKw" kind="relationship" relationship="viewControllers" id="3fo-fw-OGg"/>
+                        <segue destination="WEd-iO-yVP" kind="relationship" relationship="viewControllers" id="gk4-VK-iDN"/>
+                        <segue destination="Lvk-AD-HtY" kind="relationship" relationship="viewControllers" id="3ES-sM-VVs"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hh6-db-L9v" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -93,7 +96,7 @@
         <!--Artist-->
         <scene sceneID="c5T-Nc-InR">
             <objects>
-                <tableViewController id="sar-cE-Xvk" customClass="MbzArtistSearchListViewController" sceneMemberID="viewController">
+                <tableViewController id="sar-cE-Xvk" customClass="MbzArtistListViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="BZK-XB-SuF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="464"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,12 +120,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DF2-Bb-aT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-826" y="274"/>
+            <point key="canvasLocation" x="-1920" y="278"/>
         </scene>
         <!--Release-->
         <scene sceneID="DsE-Xc-rHi">
             <objects>
-                <tableViewController id="a54-TP-CNd" customClass="MbzReleaseSearchListViewController" sceneMemberID="viewController">
+                <tableViewController id="a54-TP-CNd" customClass="MbzReleaseListViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vrb-ca-stC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="464"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,7 +149,94 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XSU-in-n8M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-192" y="274"/>
+            <point key="canvasLocation" x="-1286" y="278"/>
+        </scene>
+        <!--Recording-->
+        <scene sceneID="k4M-xb-fQu">
+            <objects>
+                <tableViewController id="s57-Pm-LKw" customClass="MbzRecordingListViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="GNU-Rf-v1e">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="464"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sJo-T5-82J">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sJo-T5-82J" id="yu0-TR-Akg">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="s57-Pm-LKw" id="fEy-0h-jHj"/>
+                            <outlet property="delegate" destination="s57-Pm-LKw" id="uaw-4m-viL"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Recording" id="lCR-N3-mq5"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b54-Px-EAC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-640" y="278"/>
+        </scene>
+        <!--Area-->
+        <scene sceneID="C08-i4-mIy">
+            <objects>
+                <tableViewController id="WEd-iO-yVP" customClass="MbzAreaListViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="e2c-ra-GZt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="464"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="DuL-QF-jki">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DuL-QF-jki" id="cOh-s0-mx9">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WEd-iO-yVP" id="eFf-4d-gkQ"/>
+                            <outlet property="delegate" destination="WEd-iO-yVP" id="ZC5-UF-QiL"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Area" id="LAj-CQ-tj3"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IxD-aR-iHZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4" y="278"/>
+        </scene>
+        <!--Instrument-->
+        <scene sceneID="vd4-pP-Jjd">
+            <objects>
+                <tableViewController id="Lvk-AD-HtY" customClass="MbzInstrumentListViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="dsf-pJ-J7S">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="464"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9Mt-WJ-tj8">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Mt-WJ-tj8" id="QPz-mY-qgk">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Lvk-AD-HtY" id="m2V-JC-QpP"/>
+                            <outlet property="delegate" destination="Lvk-AD-HtY" id="pew-wX-q3y"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Instrument" id="zfa-VJ-6P2"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vGQ-5p-ve1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="633" y="278"/>
         </scene>
     </scenes>
 </document>

@@ -1,18 +1,18 @@
 //
-//  MbzReleaseSearchListViewController.m
+//  MbzAreaListViewController.m
 //  MusicBrainz
 //
 //  Created by Jason Yang on 15-09-23.
 //  Copyright © 2015年 yg. All rights reserved.
 //
 
-#import "MbzReleaseSearchListViewController.h"
+#import "MbzAreaListViewController.h"
 
-@interface MbzReleaseSearchListViewController ()
+@interface MbzAreaListViewController ()
 
 @end
 
-@implementation MbzReleaseSearchListViewController
+@implementation MbzAreaListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -20,7 +20,7 @@
 }
 
 - (void)performSearchWithText:(NSString *)text {
-    ListViewDataLoader *dataLoader = [ListViewDataLoader dataLoaderForSearchWithEntity:@"release" query:text];
+    ListViewDataLoader *dataLoader = [ListViewDataLoader dataLoaderForSearchWithEntity:MbzEntity_Area query:text];
     self.dataLoader = dataLoader;
     [dataLoader reload];
 }

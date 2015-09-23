@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "HMSegmentedControl.h"
+#import "SearchListViewController.h"
 
 @interface HomeViewController ()
 @property (weak, nonatomic) IBOutlet HomeViewSegmentBar *segmentBar;
@@ -80,6 +81,20 @@
 }
 
 - (void)loadViewControllersForTabBarController:(UITabBarController *)tabBarController {
+    NSMutableArray *viewControllers = tabBarController.viewControllers.mutableCopy;
+    for (NSString *entity in @[MbzEntity_Work, MbzEntity_Label]) {
+        SearchListViewController *viewController = [SearchListViewController new];
+        viewController.searchEntity = entity;
+        [viewControllers addObject:viewController];
+    }
+    tabBarController.viewControllers = viewControllers;
+    
+    for (id viewController in tabBarController.viewControllers) {
+        if ([viewController isKindOfClass:SearchListViewController.class]) {
+            ((SearchListViewController *)viewController).searchEnabled = YES;
+        }
+    }
+    
     UIViewController *firstViewController = tabBarController.viewControllers.firstObject;
     if (firstViewController) {
         [self tabBarController:tabBarController didSelectViewController:firstViewController];

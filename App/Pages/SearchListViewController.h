@@ -10,7 +10,8 @@
 
 @interface SearchListViewController : ListViewController <UISearchControllerDelegate, UISearchBarDelegate>
 
-#pragma mark to be overriden
+@property (nonatomic) BOOL searchEnabled;
+@property (nonatomic) NSString *searchEntity;
 
 - (void)performSearchWithText:(NSString *)text;
 

@@ -1,5 +1,5 @@
 //
-//  MbzArtistSearchListViewController.h
+//  MbzInstrumentListViewController.h
 //  MusicBrainz
 //
 //  Created by Jason Yang on 15-09-23.
@@ -8,6 +8,6 @@
 
 #import "SearchListViewController.h"
 
-@interface MbzArtistSearchListViewController : SearchListViewController
+@interface MbzInstrumentListViewController : SearchListViewController
 
 @end
