@@ -10,7 +10,7 @@
 
 @interface SearchListViewController : ListViewController <UISearchControllerDelegate, UISearchBarDelegate>
 
-@property (nonatomic) BOOL searchEnabled;
+@property (nonatomic) BOOL shouldShowSearchBar;
 @property (nonatomic) NSString *searchEntity;
 
 - (void)performSearchWithText:(NSString *)text;

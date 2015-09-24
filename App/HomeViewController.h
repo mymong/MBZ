@@ -11,7 +11,3 @@
 @interface HomeViewController : UIViewController
 
 @end
-
-@interface HomeViewSegmentBar : UIView
-
-@end

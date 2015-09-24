@@ -8,8 +8,12 @@
 
 #import "SearchListViewController.h"
 
+@interface SearchListViewSearchController : UISearchController
+@property (nonatomic) UIViewController *configViewController;
+@end
+
 @interface SearchListViewController ()
-@property (nonatomic) UISearchController *searchController;
+@property (nonatomic) SearchListViewSearchController *searchController;
 @end
 
 @implementation SearchListViewController
@@ -17,21 +21,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    UIViewController *resultsController = [UITableViewController new];
+    resultsController.view.backgroundColor = [UIColor greenColor];
+    
+    self.searchController = [[SearchListViewSearchController alloc] initWithSearchResultsController:nil];
     self.searchController.delegate = self;
     self.searchController.searchBar.delegate = self;
     self.searchController.hidesNavigationBarDuringPresentation = NO;
     [self.searchController.searchBar sizeToFit];
     
-    if (self.searchEnabled) {
+    if (self.shouldShowSearchBar) {
         self.tableView.tableHeaderView = self.searchController.searchBar;
     }
 }
 
-- (void)setSearchEnabled:(BOOL)searchEnabled {
-    if (_searchEnabled != searchEnabled) {
-        self.tableView.tableHeaderView = searchEnabled ? self.searchController.searchBar : nil;
-        _searchEnabled = searchEnabled;
+- (void)setSearchEnabled:(BOOL)shouldShowSearchBar {
+    if (_shouldShowSearchBar != shouldShowSearchBar) {
+        self.tableView.tableHeaderView = shouldShowSearchBar ? self.searchController.searchBar : nil;
+        _shouldShowSearchBar = shouldShowSearchBar;
     }
 }
 
@@ -44,13 +51,17 @@
 #pragma mark <UISearchControllerDelegate>
 
 - (void)willPresentSearchController:(UISearchController *)searchController {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"willPresentSearchController" object:self userInfo:@{@"UISearchController":searchController}];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+- (void)didPresentSearchController:(UISearchController *)searchController {
+    UIViewController *configViewController = [UITableViewController new];
+    configViewController.view.backgroundColor = [UIColor greenColor];
+    
+    ((SearchListViewSearchController *)searchController).configViewController = configViewController;
 }
 
 - (void)willDismissSearchController:(UISearchController *)searchController {
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"willDismissSearchController" object:self userInfo:@{@"UISearchController":searchController}];
+    // TODO
 }
 
 #pragma mark <UISearchBarDelegate>
@@ -62,6 +73,35 @@
     searchBar.text = nil;
     
     self.searchController.active = NO;
+}
+
+@end
+
+@implementation SearchListViewSearchController
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    if (self.active && self.configViewController) {
+        CGRect barFrame = [self.view convertRect:self.searchBar.frame fromView:self.searchBar.superview];
+        CGFloat barBottom = barFrame.origin.y + barFrame.size.height;
+        self.configViewController.view.frame = CGRectMake(barFrame.origin.x, barBottom, barFrame.size.width, self.view.bounds.size.height - barBottom);
+    }
+}
+
+- (void)setConfigViewController:(UIViewController *)configViewController {
+    if (_configViewController != configViewController) {
+        if (_configViewController) {
+            [_configViewController.view removeFromSuperview];
+            [_configViewController removeFromParentViewController];
+        }
+        if (configViewController) {
+            [self addChildViewController:configViewController];
+            [self.view addSubview:configViewController.view];
+            [self.view setNeedsLayout];
+        }
+        _configViewController = configViewController;
+    }
 }
 
 @end

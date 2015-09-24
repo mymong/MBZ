@@ -10,169 +10,112 @@
 #import "HMSegmentedControl.h"
 #import "SearchListViewController.h"
 
-@interface HomeViewController ()
-@property (weak, nonatomic) IBOutlet HomeViewSegmentBar *segmentBar;
-@property (weak, nonatomic) IBOutlet UIView *tabBarContainer;
-@end
-
-@interface HomeViewSegmentBar ()
+@interface HomeViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource>
 @property (nonatomic) HMSegmentedControl *segmentedControl;
-@property (weak, nonatomic) HomeViewController *viewController;
-@property (weak, nonatomic) UITabBarController *tabBarController;
+@property (nonatomic) UIPageViewController *pageViewController;
+@property (nonatomic,readonly) NSArray *pages;
 @end
 
 @implementation HomeViewController
-{
-    UITabBarController *_tabBarController; // override super.tabBarController
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // find embeded TabBarController.
-    for (UIViewController *viewController in self.childViewControllers) {
-        if ([viewController isKindOfClass:UITabBarController.class]) {
-            _tabBarController = (id)viewController;
-            [self loadViewControllersForTabBarController:_tabBarController];
-            break;
-        }
-    }
-    
-    // setup SegmentsView and bind with TabBarController.
-    self.segmentBar.viewController = self;
-    self.segmentBar.tabBarController = self.tabBarController; // bind TabBarController with SegmentedControl.
-    
-    if (self.navigationController.navigationBar) {
-        // remove bottom shadow line of NavigationBar.
-        [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-        [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    }
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onSearchControllerWillPresent:) name:@"willPresentSearchController" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onSearchControllerWillDismiss:) name:@"willDismissSearchController" object:nil];
-}
-
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    
-    [self layoutTabBarContainer];
-}
-
-#pragma mark For TabBarController
-
-- (void)layoutTabBarContainer {
-    if (!self.navigationController.toolbar || self.navigationController.toolbar.hidden) {
-        CGRect frame = self.tabBarContainer.frame;
-        frame.size = CGSizeMake(frame.size.width, self.view.bounds.size.height - self.segmentBar.frame.origin.y - self.segmentBar.frame.size.height);
-        self.tabBarContainer.frame = frame;
-    }
-    else {
-        CGRect frame = self.tabBarContainer.frame;
-        frame.size = CGSizeMake(frame.size.width, self.view.bounds.size.height - self.segmentBar.frame.origin.y - self.segmentBar.frame.size.height - self.navigationController.toolbar.frame.size.height);
-        self.tabBarContainer.frame = frame;
-    }
-}
-
-- (UITabBarController *)tabBarController {
-    if (_tabBarController) {
-        return _tabBarController;
-    }
-    return [super tabBarController];
-}
-
-- (void)loadViewControllersForTabBarController:(UITabBarController *)tabBarController {
-    NSMutableArray *viewControllers = tabBarController.viewControllers.mutableCopy;
-    for (NSString *entity in @[MbzEntity_Work, MbzEntity_Label]) {
+    NSMutableArray *pages = [NSMutableArray new];
+    NSMutableArray *titles = [NSMutableArray new];
+    NSArray *entities = @[MbzEntity_Artist, MbzEntity_ReleaseGroup, MbzEntity_Release, MbzEntity_Recording, MbzEntity_Instrument, MbzEntity_Work, MbzEntity_Label];
+    for (NSString *entity in entities) {
         SearchListViewController *viewController = [SearchListViewController new];
         viewController.searchEntity = entity;
-        [viewControllers addObject:viewController];
+        viewController.shouldShowSearchBar = YES;
+        [pages addObject:viewController];
+        [titles addObject:entity.capitalizedString];
     }
-    tabBarController.viewControllers = viewControllers;
+    _pages = pages;
     
-    for (id viewController in tabBarController.viewControllers) {
-        if ([viewController isKindOfClass:SearchListViewController.class]) {
-            ((SearchListViewController *)viewController).searchEnabled = YES;
-        }
-    }
-    
-    UIViewController *firstViewController = tabBarController.viewControllers.firstObject;
-    if (firstViewController) {
-        [self tabBarController:tabBarController didSelectViewController:firstViewController];
-    }
-}
-
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-    // TODO
-    NSLog(@"didSelectViewController: %@", viewController.title);
-}
-
-#pragma mark Notification Receivers
-
-- (void)onSearchControllerWillPresent:(NSNotification *)notification {
-    self.segmentBar.segmentedControl.touchEnabled = NO;
-}
-
-- (void)onSearchControllerWillDismiss:(NSNotification *)notification {
-    self.segmentBar.segmentedControl.touchEnabled = YES;
-}
-
-@end
-
-@implementation HomeViewSegmentBar
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    
-    self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@" "]];
-    self.segmentedControl.frame = self.bounds;
+    CGRect bounds = self.view.bounds;
+    self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:titles];
+    self.segmentedControl.frame = CGRectMake(0, 0, bounds.size.width, 32);
     self.segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
     self.segmentedControl.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor lightGrayColor], NSFontAttributeName:[UIFont systemFontOfSize:15.0f]};
     self.segmentedControl.selectedTitleTextAttributes = @{NSForegroundColorAttributeName : [UIColor blackColor]};
     self.segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
     self.segmentedControl.selectionIndicatorColor = [UIColor darkGrayColor];
     [self.segmentedControl addTarget:self action:@selector(onSegmentChanged:) forControlEvents:UIControlEventValueChanged];
-    [self addSubview:self.segmentedControl];
-}
-
-- (void)layoutSubviews {
-    [super layoutSubviews];
+    [self.view addSubview:self.segmentedControl];
     
-    self.segmentedControl.frame = self.bounds;
+    self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    self.pageViewController.delegate = self;
+    self.pageViewController.dataSource = self;
+    self.pageViewController.view.frame = CGRectMake(0, 32, bounds.size.width, bounds.size.height - 32);
+    [self.pageViewController setViewControllers:@[self.pages.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    [self.view addSubview:self.pageViewController.view];
+    [self addChildViewController:self.pageViewController];
+    
+    if (self.navigationController.navigationBar) {
+        // remove bottom shadow line of NavigationBar.
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+        [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    }
 }
 
-- (void)setTabBarController:(UITabBarController *)tabBarController {
-    if (tabBarController) {
-        NSMutableArray *titles = [NSMutableArray new];
-        if (tabBarController.tabBar.items.count > 0) {
-            for (UITabBarItem *item in tabBarController.tabBar.items) {
-                [titles addObject:(item.title ?: @"(?)")];
-            }
-        }
-        else if (tabBarController.childViewControllers.count > 0) {
-            for (UIViewController *viewController in tabBarController.childViewControllers) {
-                [titles addObject:(viewController.tabBarItem.title ?: (viewController.title ?: @"(?)"))];
-            }
-        }
-        else {
-            [titles addObjectsFromArray:@[@"(A)", @"(B)", @"(C)"]];
-        }
-        self.segmentedControl.sectionTitles = titles;
-        if (NSNotFound != tabBarController.selectedIndex) {
-            self.segmentedControl.selectedSegmentIndex = tabBarController.selectedIndex;
-        }
-    }
-    _tabBarController = tabBarController;
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    CGRect bounds = self.view.bounds;
+    self.segmentedControl.frame = CGRectMake(0, 0, bounds.size.width, 32);
+    self.pageViewController.view.frame = CGRectMake(0, 32, bounds.size.width, bounds.size.height - 32);
 }
+
+#pragma mark Events
 
 - (void)onSegmentChanged:(HMSegmentedControl *)control {
-    UITabBarController *tabBarController = self.tabBarController;
-    if (tabBarController.tabBar.items.count > control.selectedSegmentIndex) {
-        if (tabBarController.selectedIndex != control.selectedSegmentIndex) {
-            tabBarController.selectedIndex = control.selectedSegmentIndex;
-            
-            [self.viewController tabBarController:tabBarController didSelectViewController:tabBarController.selectedViewController];
+    NSInteger index = control.selectedSegmentIndex;
+    if (index >= 0 && index < self.pages.count) {
+        UIPageViewControllerNavigationDirection direction = UIPageViewControllerNavigationDirectionForward;
+        
+        UIViewController *currentViewController = self.pageViewController.viewControllers.firstObject;
+        if (currentViewController) {
+            NSUInteger currentIndex = [self.pages indexOfObject:currentViewController];
+            if (currentIndex != NSNotFound && currentIndex > index) {
+                direction = UIPageViewControllerNavigationDirectionReverse;
+            }
         }
+        
+        [self.pageViewController setViewControllers:@[self.pages[index]] direction:direction animated:YES completion:nil];
     }
+}
+
+#pragma mark <UIPageViewControllerDelegate>
+
+- (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray<UIViewController *> *)pendingViewControllers {
+    
+}
+
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed {
+    UIViewController *currentViewController = self.pageViewController.viewControllers.firstObject;
+    NSUInteger currentIndex = currentViewController ? [self.pages indexOfObject:currentViewController] : NSNotFound;
+    if (currentIndex != NSNotFound) {
+        [self.segmentedControl setSelectedSegmentIndex:currentIndex animated:YES];
+    }
+}
+
+#pragma mark <UIPageViewControllerDataSource>
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
+    NSUInteger currentIndex = [self.pages indexOfObject:viewController];
+    if (currentIndex != NSNotFound && currentIndex > 0) {
+        return self.pages[currentIndex - 1];
+    }
+    return nil;
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
+    NSUInteger currentIndex = [self.pages indexOfObject:viewController];
+    if (currentIndex != NSNotFound && currentIndex + 1 < self.pages.count) {
+        return self.pages[currentIndex + 1];
+    }
+    return nil;
 }
 
 @end
