@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		84E20E2FD5FD2AE56CC2AF7A /* libPods-MusicBrainzTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBA124568BC7F5A833A25C1 /* libPods-MusicBrainzTests.a */; };
+		EE4544EE1BBA313E00B206B5 /* ListViewDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4544ED1BBA313E00B206B5 /* ListViewDataLoader.m */; settings = {ASSET_TAGS = (); }; };
+		EE4544F41BBA342A00B206B5 /* SearchListViewDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4544F31BBA342A00B206B5 /* SearchListViewDataLoader.m */; settings = {ASSET_TAGS = (); }; };
+		EE4544F71BBA345300B206B5 /* LookupListViewDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4544F61BBA345300B206B5 /* LookupListViewDataLoader.m */; settings = {ASSET_TAGS = (); }; };
+		EE4544FA1BBA347600B206B5 /* BrowseListViewDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4544F91BBA347600B206B5 /* BrowseListViewDataLoader.m */; settings = {ASSET_TAGS = (); }; };
+		EE4544FD1BBA349000B206B5 /* DetailListViewDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4544FC1BBA349000B206B5 /* DetailListViewDataLoader.m */; settings = {ASSET_TAGS = (); }; };
 		EE71409A1BB2352600873347 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7140991BB2352600873347 /* main.m */; };
 		EE71409D1BB2352600873347 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE71409C1BB2352600873347 /* AppDelegate.m */; };
 		EE7140A01BB2352600873347 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE71409F1BB2352600873347 /* HomeViewController.m */; };
@@ -32,13 +37,8 @@
 		EE7140EE1BB2369900873347 /* NSString+URLQueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7140DD1BB2369900873347 /* NSString+URLQueryString.m */; settings = {ASSET_TAGS = (); }; };
 		EE7140EF1BB2369900873347 /* RawResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7140DF1BB2369900873347 /* RawResponse.m */; settings = {ASSET_TAGS = (); }; };
 		EE7140F71BB2493E00873347 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7140F61BB2493E00873347 /* ListViewController.m */; settings = {ASSET_TAGS = (); }; };
-		EE7140FA1BB2497700873347 /* ListViewDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7140F91BB2497700873347 /* ListViewDataLoader.m */; settings = {ASSET_TAGS = (); }; };
 		EE7140FD1BB24AF500873347 /* SearchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7140FC1BB24AF500873347 /* SearchListViewController.m */; settings = {ASSET_TAGS = (); }; };
 		EE7141001BB24BF700873347 /* MbzArtistListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7140FF1BB24BF700873347 /* MbzArtistListViewController.m */; settings = {ASSET_TAGS = (); }; };
-		EE7141031BB24CB500873347 /* MbzReleaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7141021BB24CB500873347 /* MbzReleaseListViewController.m */; settings = {ASSET_TAGS = (); }; };
-		EE7141061BB250E300873347 /* MbzRecordingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7141051BB250E300873347 /* MbzRecordingListViewController.m */; settings = {ASSET_TAGS = (); }; };
-		EE71410C1BB277E000873347 /* MbzAreaListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE71410B1BB277E000873347 /* MbzAreaListViewController.m */; settings = {ASSET_TAGS = (); }; };
-		EE71410F1BB2782C00873347 /* MbzInstrumentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE71410E1BB2782C00873347 /* MbzInstrumentListViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F4908422F85D261E1DB77D9D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB568F8A681E595DE5D5373 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +59,16 @@
 		9E2EC8B28C46310E1D64BB40 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A4538D9968D53EE7BAB5B778 /* Pods-MusicBrainzTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicBrainzTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicBrainzTests/Pods-MusicBrainzTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DCE3F75C505572CEA64F0525 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		EE4544EC1BBA313E00B206B5 /* ListViewDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewDataLoader.h; sourceTree = "<group>"; };
+		EE4544ED1BBA313E00B206B5 /* ListViewDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewDataLoader.m; sourceTree = "<group>"; };
+		EE4544F21BBA342A00B206B5 /* SearchListViewDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchListViewDataLoader.h; sourceTree = "<group>"; };
+		EE4544F31BBA342A00B206B5 /* SearchListViewDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchListViewDataLoader.m; sourceTree = "<group>"; };
+		EE4544F51BBA345300B206B5 /* LookupListViewDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LookupListViewDataLoader.h; sourceTree = "<group>"; };
+		EE4544F61BBA345300B206B5 /* LookupListViewDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LookupListViewDataLoader.m; sourceTree = "<group>"; };
+		EE4544F81BBA347600B206B5 /* BrowseListViewDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseListViewDataLoader.h; sourceTree = "<group>"; };
+		EE4544F91BBA347600B206B5 /* BrowseListViewDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseListViewDataLoader.m; sourceTree = "<group>"; };
+		EE4544FB1BBA349000B206B5 /* DetailListViewDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailListViewDataLoader.h; sourceTree = "<group>"; };
+		EE4544FC1BBA349000B206B5 /* DetailListViewDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailListViewDataLoader.m; sourceTree = "<group>"; };
 		EE7140951BB2352600873347 /* MusicBrainz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicBrainz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE7140991BB2352600873347 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EE71409B1BB2352600873347 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -107,20 +117,10 @@
 		EE7140DF1BB2369900873347 /* RawResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RawResponse.m; sourceTree = "<group>"; };
 		EE7140F51BB2493E00873347 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		EE7140F61BB2493E00873347 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
-		EE7140F81BB2497700873347 /* ListViewDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewDataLoader.h; sourceTree = "<group>"; };
-		EE7140F91BB2497700873347 /* ListViewDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewDataLoader.m; sourceTree = "<group>"; };
 		EE7140FB1BB24AF500873347 /* SearchListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchListViewController.h; sourceTree = "<group>"; };
 		EE7140FC1BB24AF500873347 /* SearchListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchListViewController.m; sourceTree = "<group>"; };
 		EE7140FE1BB24BF700873347 /* MbzArtistListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MbzArtistListViewController.h; sourceTree = "<group>"; };
 		EE7140FF1BB24BF700873347 /* MbzArtistListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MbzArtistListViewController.m; sourceTree = "<group>"; };
-		EE7141011BB24CB500873347 /* MbzReleaseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MbzReleaseListViewController.h; sourceTree = "<group>"; };
-		EE7141021BB24CB500873347 /* MbzReleaseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MbzReleaseListViewController.m; sourceTree = "<group>"; };
-		EE7141041BB250E300873347 /* MbzRecordingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MbzRecordingListViewController.h; sourceTree = "<group>"; };
-		EE7141051BB250E300873347 /* MbzRecordingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MbzRecordingListViewController.m; sourceTree = "<group>"; };
-		EE71410A1BB277E000873347 /* MbzAreaListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MbzAreaListViewController.h; sourceTree = "<group>"; };
-		EE71410B1BB277E000873347 /* MbzAreaListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MbzAreaListViewController.m; sourceTree = "<group>"; };
-		EE71410D1BB2782C00873347 /* MbzInstrumentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MbzInstrumentListViewController.h; sourceTree = "<group>"; };
-		EE71410E1BB2782C00873347 /* MbzInstrumentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MbzInstrumentListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +161,23 @@
 				0DBA124568BC7F5A833A25C1 /* libPods-MusicBrainzTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE4544EB1BBA313E00B206B5 /* ListViewDataLoader */ = {
+			isa = PBXGroup;
+			children = (
+				EE4544EC1BBA313E00B206B5 /* ListViewDataLoader.h */,
+				EE4544ED1BBA313E00B206B5 /* ListViewDataLoader.m */,
+				EE4544F21BBA342A00B206B5 /* SearchListViewDataLoader.h */,
+				EE4544F31BBA342A00B206B5 /* SearchListViewDataLoader.m */,
+				EE4544F51BBA345300B206B5 /* LookupListViewDataLoader.h */,
+				EE4544F61BBA345300B206B5 /* LookupListViewDataLoader.m */,
+				EE4544FB1BBA349000B206B5 /* DetailListViewDataLoader.h */,
+				EE4544FC1BBA349000B206B5 /* DetailListViewDataLoader.m */,
+				EE4544F81BBA347600B206B5 /* BrowseListViewDataLoader.h */,
+				EE4544F91BBA347600B206B5 /* BrowseListViewDataLoader.m */,
+			);
+			path = ListViewDataLoader;
 			sourceTree = "<group>";
 		};
 		EE71408C1BB2352600873347 = {
@@ -279,20 +296,11 @@
 			children = (
 				EE7140F51BB2493E00873347 /* ListViewController.h */,
 				EE7140F61BB2493E00873347 /* ListViewController.m */,
-				EE7140F81BB2497700873347 /* ListViewDataLoader.h */,
-				EE7140F91BB2497700873347 /* ListViewDataLoader.m */,
+				EE4544EB1BBA313E00B206B5 /* ListViewDataLoader */,
 				EE7140FB1BB24AF500873347 /* SearchListViewController.h */,
 				EE7140FC1BB24AF500873347 /* SearchListViewController.m */,
 				EE7140FE1BB24BF700873347 /* MbzArtistListViewController.h */,
 				EE7140FF1BB24BF700873347 /* MbzArtistListViewController.m */,
-				EE7141011BB24CB500873347 /* MbzReleaseListViewController.h */,
-				EE7141021BB24CB500873347 /* MbzReleaseListViewController.m */,
-				EE7141041BB250E300873347 /* MbzRecordingListViewController.h */,
-				EE7141051BB250E300873347 /* MbzRecordingListViewController.m */,
-				EE71410A1BB277E000873347 /* MbzAreaListViewController.h */,
-				EE71410B1BB277E000873347 /* MbzAreaListViewController.m */,
-				EE71410D1BB2782C00873347 /* MbzInstrumentListViewController.h */,
-				EE71410E1BB2782C00873347 /* MbzInstrumentListViewController.m */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -471,17 +479,17 @@
 				EE7140EF1BB2369900873347 /* RawResponse.m in Sources */,
 				EE7141001BB24BF700873347 /* MbzArtistListViewController.m in Sources */,
 				EE7140ED1BB2369900873347 /* NSString+DoubleQuotesString.m in Sources */,
-				EE71410F1BB2782C00873347 /* MbzInstrumentListViewController.m in Sources */,
-				EE71410C1BB277E000873347 /* MbzAreaListViewController.m in Sources */,
+				EE4544FA1BBA347600B206B5 /* BrowseListViewDataLoader.m in Sources */,
+				EE4544EE1BBA313E00B206B5 /* ListViewDataLoader.m in Sources */,
 				EE7140E81BB2369900873347 /* MbzApi+WebServiceLookup.m in Sources */,
 				EE71409D1BB2352600873347 /* AppDelegate.m in Sources */,
 				EE7140FD1BB24AF500873347 /* SearchListViewController.m in Sources */,
-				EE7141031BB24CB500873347 /* MbzReleaseListViewController.m in Sources */,
+				EE4544FD1BBA349000B206B5 /* DetailListViewDataLoader.m in Sources */,
 				EE7140E91BB2369900873347 /* MbzApi+WebServiceSearch.m in Sources */,
 				EE7140E11BB2369900873347 /* MbzDataAliase.m in Sources */,
-				EE7141061BB250E300873347 /* MbzRecordingListViewController.m in Sources */,
+				EE4544F41BBA342A00B206B5 /* SearchListViewDataLoader.m in Sources */,
+				EE4544F71BBA345300B206B5 /* LookupListViewDataLoader.m in Sources */,
 				EE7140F71BB2493E00873347 /* ListViewController.m in Sources */,
-				EE7140FA1BB2497700873347 /* ListViewDataLoader.m in Sources */,
 				EE7140E51BB2369900873347 /* MbzDataTag.m in Sources */,
 				EE7140E61BB2369900873347 /* MbzApi+WebService.m in Sources */,
 				EE71409A1BB2352600873347 /* main.m in Sources */,

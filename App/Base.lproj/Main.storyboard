@@ -7,16 +7,11 @@
         <!--Navigation Controller-->
         <scene sceneID="1aS-xR-qzD">
             <objects>
-                <navigationController toolbarHidden="NO" id="Y6q-hA-UEH" sceneMemberID="viewController">
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                <navigationController id="Y6q-hA-UEH" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Sbr-Cf-8jB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <toolbar key="toolbar" hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="NcN-8b-oZV" customClass="PlayerBar">
-                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
                     <connections>
                         <segue destination="Ivu-Pt-Hvr" kind="relationship" relationship="rootViewController" id="BDO-48-ycM"/>
                     </connections>

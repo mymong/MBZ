@@ -9,6 +9,10 @@
 #import "ListViewController.h"
 #import "MbzApi+WebServiceSearch.h"
 
+#import "LookupListViewDataLoader.h"
+#import "BrowseListViewDataLoader.h"
+#import "DetailListViewDataLoader.h"
+
 @interface ListViewController ()
 @property (nonatomic,readonly) NSString *defaultCellIdentifier;
 @end
@@ -34,6 +38,15 @@
 
 - (void)listViewDataLoaderDidReload:(ListViewDataLoader *)dataLoader {
     NSParameterAssert(self.dataLoader == dataLoader);
+    
+    [self.tableView reloadData];
+}
+
+- (void)listViewDataLoader:(ListViewDataLoader *)dataLoader didReload:(NSError *)error {
+    NSParameterAssert(self.dataLoader == dataLoader);
+    if (error) {
+        NSLog(@"%@", error);
+    }
     
     [self.tableView reloadData];
 }
@@ -89,7 +102,7 @@
         
         ListViewController *viewController = [ListViewController new];
         if (viewController) {
-            ListViewDataLoader *dataLoader = [ListViewDataLoader dataLoaderForDetail:item.detail withEntity:item.entity];
+            ListViewDataLoader *dataLoader = [[DetailListViewDataLoader alloc] initWithEntity:item.entity detail:item.detail];
             viewController.dataLoader = dataLoader;
             [dataLoader reload];
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -108,7 +121,7 @@
         
         ListViewController *viewController = [ListViewController new];
         if (viewController) {
-            ListViewDataLoader *dataLoader = [ListViewDataLoader dataLoaderForLookupWithEntity:item.entity mbid:item.mbid];
+            ListViewDataLoader *dataLoader = [[LookupListViewDataLoader alloc] initWithEntity:item.entity mbid:item.mbid];
             viewController.dataLoader = dataLoader;
             [dataLoader reload];
             dispatch_async(dispatch_get_main_queue(), ^{

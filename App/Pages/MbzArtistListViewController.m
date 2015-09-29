@@ -7,6 +7,7 @@
 //
 
 #import "MbzArtistListViewController.h"
+#import "SearchListViewDataLoader.h"
 
 @interface MbzArtistListViewController ()
 
@@ -20,7 +21,7 @@
 }
 
 - (void)performSearchWithText:(NSString *)text {
-    ListViewDataLoader *dataLoader = [ListViewDataLoader dataLoaderForSearchWithEntity:MbzEntity_Artist query:text];
+    ListViewDataLoader *dataLoader = [[SearchListViewDataLoader alloc] initWithEntity:MbzEntity_Artist query:text];
     self.dataLoader = dataLoader;
     [dataLoader reload];
 }

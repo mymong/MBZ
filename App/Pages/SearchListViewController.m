@@ -7,6 +7,7 @@
 //
 
 #import "SearchListViewController.h"
+#import "SearchListViewDataLoader.h"
 
 @interface SearchListViewSearchController : UISearchController
 @property (nonatomic) UIViewController *configViewController;
@@ -43,7 +44,7 @@
 }
 
 - (void)performSearchWithText:(NSString *)text {
-    ListViewDataLoader *dataLoader = [ListViewDataLoader dataLoaderForSearchWithEntity:self.searchEntity query:text];
+    ListViewDataLoader *dataLoader = [[SearchListViewDataLoader alloc] initWithEntity:self.searchEntity query:text];
     self.dataLoader = dataLoader;
     [dataLoader reload];
 }
