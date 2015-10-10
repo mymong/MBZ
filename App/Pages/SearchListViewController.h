@@ -8,9 +8,10 @@
 
 #import "ListViewController.h"
 
-@interface SearchListViewController : ListViewController <UISearchControllerDelegate, UISearchBarDelegate>
+@interface SearchListViewController : ListViewController
 
-@property (nonatomic) BOOL shouldShowSearchBar;
++ (SearchListViewController *)loadFromStoryboard;
+
 @property (nonatomic) NSString *searchEntity;
 
 - (void)performSearchWithText:(NSString *)text;

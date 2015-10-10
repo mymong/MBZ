@@ -7,13 +7,16 @@
 //
 
 #import "HomeViewController.h"
+#import "UISearchController+NavigationItemSearchBar.h"
 #import "HMSegmentedControl.h"
 #import "SearchListViewController.h"
 
-@interface HomeViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource>
+@interface HomeViewController () <UISearchBarDelegate, UIPageViewControllerDelegate, UIPageViewControllerDataSource>
+@property (nonatomic,readonly) UISearchController *searchController;
 @property (nonatomic) HMSegmentedControl *segmentedControl;
+@property (nonatomic,readonly) UIView *separatorLine;
 @property (nonatomic) UIPageViewController *pageViewController;
-@property (nonatomic,readonly) NSArray *pages;
+@property (nonatomic,readonly) NSArray<UIViewController*> *pages;
 @end
 
 @implementation HomeViewController
@@ -21,13 +24,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _searchController = [UISearchController searchControllerWithSearchBarAsTitleViewOfNavigationItem:self.navigationItem withSearchResultsController:nil];
+    self.searchController.searchBar.delegate = self;
+    self.searchController.searchBar.placeholder = @"Search";
+    
     NSMutableArray *pages = [NSMutableArray new];
     NSMutableArray *titles = [NSMutableArray new];
     NSArray *entities = @[MbzEntity_Artist, MbzEntity_ReleaseGroup, MbzEntity_Release, MbzEntity_Recording, MbzEntity_Instrument, MbzEntity_Work, MbzEntity_Label];
     for (NSString *entity in entities) {
-        SearchListViewController *viewController = [SearchListViewController new];
+//        SearchListViewController *viewController = [SearchListViewController new];
+        SearchListViewController *viewController = [SearchListViewController loadFromStoryboard];
         viewController.searchEntity = entity;
-        viewController.shouldShowSearchBar = YES;
         [pages addObject:viewController];
         [titles addObject:entity.capitalizedString];
     }
@@ -43,6 +50,10 @@
     self.segmentedControl.selectionIndicatorColor = [UIColor darkGrayColor];
     [self.segmentedControl addTarget:self action:@selector(onSegmentChanged:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:self.segmentedControl];
+    
+    _separatorLine = [[UIView alloc] initWithFrame:CGRectMake(0, 31, bounds.size.width, 1)];
+    self.separatorLine.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:self.separatorLine];
     
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     self.pageViewController.delegate = self;
@@ -64,6 +75,7 @@
     
     CGRect bounds = self.view.bounds;
     self.segmentedControl.frame = CGRectMake(0, 0, bounds.size.width, 32);
+    self.separatorLine.frame = CGRectMake(0, 31, bounds.size.width, 1);
     self.pageViewController.view.frame = CGRectMake(0, 32, bounds.size.width, bounds.size.height - 32);
 }
 
@@ -82,8 +94,29 @@
             }
         }
         
-        [self.pageViewController setViewControllers:@[self.pages[index]] direction:direction animated:YES completion:nil];
+        UIViewController *selectedViewController = self.pages[index];
+        [self.pageViewController setViewControllers:@[selectedViewController] direction:direction animated:YES completion:nil];
+        if ([selectedViewController isKindOfClass:SearchListViewController.class]) {
+            SearchListViewController *viewController = (id)selectedViewController;
+            [viewController performSearchWithText:self.searchController.searchBar.text];
+        }
     }
+}
+
+#pragma mark <UISearchBarDelegate>
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    NSString *text = searchBar.text;
+    
+    UIViewController *currentViewController = self.pageViewController.viewControllers.firstObject;
+    if ([currentViewController isKindOfClass:SearchListViewController.class]) {
+        SearchListViewController *viewController = (id)currentViewController;
+        [viewController performSearchWithText:text];
+    }
+    
+    self.searchController.active = NO;
+    
+    searchBar.text = text;
 }
 
 #pragma mark <UIPageViewControllerDelegate>

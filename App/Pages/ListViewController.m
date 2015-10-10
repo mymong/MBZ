@@ -23,7 +23,7 @@
     [super viewDidLoad];
     
     _defaultCellIdentifier = @"defaultCellIdentifier";
-    [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:self.defaultCellIdentifier];
+    [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:_defaultCellIdentifier];
 }
 
 - (void)setDataLoader:(ListViewDataLoader *)dataLoader {
@@ -73,7 +73,8 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.defaultCellIdentifier forIndexPath:indexPath];
     cell.textLabel.text = item.title;
-    cell.detailTextLabel.text = item.subtitle;
+//    cell.detailTextLabel.text = item.subtitle;
+    cell.detailTextLabel.text = @"Score:100 SortName:ABC Disambiguation:Artcell, Black, CrypticFate Type:Group";
     
     if (item.mbid && item.detail) {
         cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
