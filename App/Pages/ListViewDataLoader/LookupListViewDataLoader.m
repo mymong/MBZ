@@ -19,7 +19,7 @@
 }
 
 - (void)reload {
-    if ([self willReload]) {
+    if ([self willLoad]) {
         __weak __typeof(self) wself = self;
         NSString *entity = self.entity;
         NSString *mbid = self.mbid;
@@ -28,7 +28,7 @@
             if (wself) {
                 MbzApi *api = [MbzApi sharedApi];
                 [api lookupEntity:entity mbid:mbid subqueries:nil arguments:nil relationships:nil type:nil status:nil completion:^(MbzResponse *response) {
-                    [wself didReloadDataWithResponse:response];
+                    [wself didLoadWithResponse:response];
                 }];
             }
         });

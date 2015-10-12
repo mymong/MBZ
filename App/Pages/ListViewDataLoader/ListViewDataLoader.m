@@ -18,68 +18,86 @@
 + (NSArray *)itemArrayWithObject:(id)object forKey:(id)key;
 @end
 
+@interface ListViewDataLoader ()
+@property (nonatomic) BOOL isLoading;
+@property (nonatomic) NSDate *loadedDate;
+@end
+
 @implementation ListViewDataLoader
 
 - (instancetype)initWithEntity:(NSString *)entity {
     if (self = [super init]) {
         _entity = entity;
-        _loadingQueue = dispatch_queue_create([NSStringFromClass(self.class) stringByAppendingString:@" loading queue."].UTF8String, DISPATCH_QUEUE_SERIAL);
+        _sections = [NSMutableArray new];
+        
+        NSString *loadingQueueName = [NSString stringWithFormat:@"LoadingQueue of \"%@\" for Entity \"%@\"", NSStringFromClass(self.class), entity];
+        _loadingQueue = dispatch_queue_create(loadingQueueName.UTF8String, DISPATCH_QUEUE_SERIAL);
     }
     return self;
 }
 
-- (void)reload {
+- (void)load {
     NSAssert(NO, @"Must be overriden!");
 }
 
-- (BOOL)willReload {
+- (BOOL)willLoad {
     if (self.isLoading) {
         return NO;
     }
     else {
-        _isLoading = YES;
+        self.isLoading = YES;
         return YES;
     }
 }
 
-- (void)didReloadDataWithResponse:(MbzResponse *)response {
-    id object;
-    NSError *error = response.raw.error;
-    if (!error) {
-        object = [response.raw JSONObjectFromData:&error];
-    }
-    
-    if (error) {
-        [self didReloadFailedWithError:error];
-    }
-    else {
-        [self didReloadDataWithJSONObject:object];
+- (void)didFinishLoading:(NSDate *)date {
+    self.isLoading = NO;
+    if (date && ![self.loadedDate isEqualToDate:date]) {
+        self.loadedDate = date;
     }
 }
 
-- (void)didReloadDataWithJSONObject:(id)object {
+- (void)didLoadWithResponse:(MbzResponse *)response {
+    NSError *error = response.raw.error;
+    if (error) {
+        [self.delegate listViewDataLoader:self didLoadFailedWithError:error];
+        return;
+    }
+    
+    id json = [response.raw JSONObjectFromData:&error];
+    if (error) {
+        [self.delegate listViewDataLoader:self didLoadFailedWithError:error];
+        return;
+    }
+    
+    [self didLoadWithJSONObject:json];
+}
+
+- (void)didLoadWithJSONObject:(id)object {
     NSArray *sections = [self makeSectionsFromJSONObject:object];
     
     __weak __typeof(self) wself = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         __strong __typeof(wself) sself = wself; if (sself) {
-            sself->_sections = sections;
-            sself->_isLoading = NO;
+            [sself.sections addObjectsFromArray:sections];
+            
+            [sself didFinishLoading:NSDate.date];
             
             if (sself.delegate) {
-                [sself.delegate listViewDataLoader:sself didReload:nil];
+                [sself.delegate listViewDataLoaderDidReload:sself];
             }
         }
     });
 }
 
-- (void)didReloadFailedWithError:(NSError *)error {
+- (void)didLoadFailedWithError:(NSError *)error {
     __weak __typeof(self) wself = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         __strong __typeof(wself) sself = wself; if (sself) {
-            sself->_isLoading = NO;
+            [sself didFinishLoading:nil];
+            
             if (sself.delegate) {
-                [sself.delegate listViewDataLoader:sself didReload:error];
+                [sself.delegate listViewDataLoader:sself didLoadFailedWithError:error];
             }
         }
     });

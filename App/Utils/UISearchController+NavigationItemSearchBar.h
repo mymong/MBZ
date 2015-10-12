@@ -10,6 +10,7 @@
 
 @interface UISearchBar (NavigationItemSearchBar)
 + (nonnull instancetype)searchBarAsTitleViewOfNavigationItem:(nonnull UINavigationItem *)navigationItem;
+- (UITextField *)textField;
 @end
 
 @interface UISearchController (NavigationItemSearchBar)

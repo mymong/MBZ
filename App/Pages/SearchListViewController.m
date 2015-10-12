@@ -34,9 +34,9 @@
     if (text.length > 0 && ![self.query isEqualToString:text]) {
         self.query = text;
         
-        ListViewDataLoader *dataLoader = [[SearchListViewDataLoader alloc] initWithEntity:self.searchEntity query:self.query];
+        ListViewDataLoader *dataLoader = [[SearchListViewDataLoader alloc] initWithEntity:self.searchEntity query:self.query limit:@(50)];
         self.dataLoader = dataLoader;
-        [dataLoader reload];
+        [dataLoader load];
     }
 }
 

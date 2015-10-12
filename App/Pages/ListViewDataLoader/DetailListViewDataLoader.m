@@ -18,13 +18,13 @@
 }
 
 - (void)reload {
-    if ([self willReload]) {
+    if ([self willLoad]) {
         __weak __typeof(self) wself = self;
         id detail = self.detail;
         
         dispatch_async(self.loadingQueue, ^{
             if (wself) {
-                [wself didReloadDataWithJSONObject:detail];
+                [wself didLoadWithJSONObject:detail];
             }
         });
     }

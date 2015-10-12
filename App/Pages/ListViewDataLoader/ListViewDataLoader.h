@@ -11,28 +11,26 @@
 @class ListViewDataLoader;
 
 @protocol ListViewDataLoaderDelegate <NSObject>
-- (void)listViewDataLoader:(ListViewDataLoader *)dataLoader didReload:(NSError *)error;
-//- (void)listViewDataLoader:(ListViewDataLoader *)dataLoader didInsertSections:(NSIndexSet *)sections;
+- (void)listViewDataLoaderDidReload:(ListViewDataLoader *)dataLoader;
+- (void)listViewDataLoader:(ListViewDataLoader *)dataLoader didLoadFailedWithError:(NSError *)error;
+@optional
+- (void)listViewDataLoader:(ListViewDataLoader *)dataLoader didLoadSectionsAtIndexSet:(NSIndexSet *)indexSet;
+- (void)listViewDataLoader:(ListViewDataLoader *)dataLoader didLoadItemsAtIndexSet:(NSIndexSet *)indexSet inSection:(NSUInteger)section;
 @end
 
 @interface ListViewDataLoader : NSObject
 @property (nonatomic,weak) id<ListViewDataLoaderDelegate> delegate;
 @property (nonatomic,readonly) dispatch_queue_t loadingQueue;
 @property (nonatomic,readonly) NSString *entity;
-@property (nonatomic,readonly) NSArray *sections;
+@property (nonatomic,readonly) NSMutableArray *sections;
 @property (nonatomic,readonly) BOOL isLoading;
-
+@property (nonatomic,readonly) NSDate *loadedDate;
 - (instancetype)initWithEntity:(NSString *)entity;
-
-#pragma mark override
-- (void)reload;
-//- (void)loadMore;
-
-#pragma mark protected
-- (BOOL)willReload;
-- (void)didReloadDataWithResponse:(MbzResponse *)response;
-- (void)didReloadDataWithJSONObject:(id)object;
-
+- (void)load;
+- (BOOL)willLoad;
+- (void)didFinishLoading:(NSDate *)date;
+- (void)didLoadWithResponse:(MbzResponse *)response;
+- (void)didLoadWithJSONObject:(id)object;
 @end
 
 @interface ListViewDataSection : NSObject

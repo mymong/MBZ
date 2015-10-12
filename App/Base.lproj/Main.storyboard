@@ -11,6 +11,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Sbr-Cf-8jB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.612493575759952" green="0.54580310995572878" blue="0.81718053698752235" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="Ivu-Pt-Hvr" kind="relationship" relationship="rootViewController" id="BDO-48-ycM"/>
@@ -33,7 +34,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="MusicBrainz" id="FK2-eZ-WSa"/>
+                    <navigationItem key="navigationItem" title="MusicBrainz" id="FK2-eZ-WSa">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="oa8-MU-oJP">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Crp-uq-71z">
+                                <rect key="frame" x="20" y="6" width="40" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Musicbrainz_logo"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KF9-To-y3j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,4 +93,7 @@
             <point key="canvasLocation" x="-1920" y="278"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Musicbrainz_logo" width="45" height="31"/>
+    </resources>
 </document>

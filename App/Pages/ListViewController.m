@@ -42,11 +42,19 @@
     [self.tableView reloadData];
 }
 
-- (void)listViewDataLoader:(ListViewDataLoader *)dataLoader didReload:(NSError *)error {
+- (void)listViewDataLoader:(ListViewDataLoader *)dataLoader didLoadFailedWithError:(NSError *)error {
     NSParameterAssert(self.dataLoader == dataLoader);
     if (error) {
         NSLog(@"%@", error);
     }
+}
+
+- (void)listViewDataLoader:(ListViewDataLoader *)dataLoader didLoadSectionsAtIndexSet:(NSIndexSet *)indexSet {
+    
+    [self.tableView reloadData];
+}
+
+- (void)listViewDataLoader:(ListViewDataLoader *)dataLoader didLoadItemsAtIndexSet:(NSIndexSet *)indexSet inSection:(NSUInteger)section {
     
     [self.tableView reloadData];
 }
@@ -73,18 +81,17 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.defaultCellIdentifier forIndexPath:indexPath];
     cell.textLabel.text = item.title;
-//    cell.detailTextLabel.text = item.subtitle;
-    cell.detailTextLabel.text = @"Score:100 SortName:ABC Disambiguation:Artcell, Black, CrypticFate Type:Group";
+    cell.detailTextLabel.text = item.subtitle;
     
-    if (item.mbid && item.detail) {
-        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-    }
-    else if (item.mbid) {
+    if (item.mbid) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-    else if (item.detail) {
-        cell.accessoryType = UITableViewCellAccessoryDetailButton;
-    }
+//    else if (item.mbid && item.detail) {
+//        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+//    }
+//    else if (item.detail) {
+//        cell.accessoryType = UITableViewCellAccessoryDetailButton;
+//    }
     else {
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
@@ -105,7 +112,7 @@
         if (viewController) {
             ListViewDataLoader *dataLoader = [[DetailListViewDataLoader alloc] initWithEntity:item.entity detail:item.detail];
             viewController.dataLoader = dataLoader;
-            [dataLoader reload];
+            [dataLoader load];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [navigationController pushViewController:viewController animated:YES];
             });
@@ -124,7 +131,7 @@
         if (viewController) {
             ListViewDataLoader *dataLoader = [[LookupListViewDataLoader alloc] initWithEntity:item.entity mbid:item.mbid];
             viewController.dataLoader = dataLoader;
-            [dataLoader reload];
+            [dataLoader load];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [navigationController pushViewController:viewController animated:YES];
             });

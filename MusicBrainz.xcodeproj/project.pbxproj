@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		84E20E2FD5FD2AE56CC2AF7A /* libPods-MusicBrainzTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBA124568BC7F5A833A25C1 /* libPods-MusicBrainzTests.a */; };
 		EE363F2C1BC8FDD600ED45D9 /* UISearchController+NavigationItemSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EE363F2B1BC8FDD600ED45D9 /* UISearchController+NavigationItemSearchBar.m */; settings = {ASSET_TAGS = (); }; };
+		EE363F2F1BCB9EE800ED45D9 /* UIImage+SingleColorImage.m in Sources */ = {isa = PBXBuildFile; fileRef = EE363F2E1BCB9EE800ED45D9 /* UIImage+SingleColorImage.m */; settings = {ASSET_TAGS = (); }; };
 		EE4544EE1BBA313E00B206B5 /* ListViewDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4544ED1BBA313E00B206B5 /* ListViewDataLoader.m */; settings = {ASSET_TAGS = (); }; };
 		EE4544F41BBA342A00B206B5 /* SearchListViewDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4544F31BBA342A00B206B5 /* SearchListViewDataLoader.m */; settings = {ASSET_TAGS = (); }; };
 		EE4544F71BBA345300B206B5 /* LookupListViewDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4544F61BBA345300B206B5 /* LookupListViewDataLoader.m */; settings = {ASSET_TAGS = (); }; };
@@ -39,7 +40,6 @@
 		EE7140EF1BB2369900873347 /* RawResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7140DF1BB2369900873347 /* RawResponse.m */; settings = {ASSET_TAGS = (); }; };
 		EE7140F71BB2493E00873347 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7140F61BB2493E00873347 /* ListViewController.m */; settings = {ASSET_TAGS = (); }; };
 		EE7140FD1BB24AF500873347 /* SearchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7140FC1BB24AF500873347 /* SearchListViewController.m */; settings = {ASSET_TAGS = (); }; };
-		EE7141001BB24BF700873347 /* MbzArtistListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7140FF1BB24BF700873347 /* MbzArtistListViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F4908422F85D261E1DB77D9D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB568F8A681E595DE5D5373 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +62,8 @@
 		DCE3F75C505572CEA64F0525 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		EE363F2A1BC8FDD600ED45D9 /* UISearchController+NavigationItemSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchController+NavigationItemSearchBar.h"; sourceTree = "<group>"; };
 		EE363F2B1BC8FDD600ED45D9 /* UISearchController+NavigationItemSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchController+NavigationItemSearchBar.m"; sourceTree = "<group>"; };
+		EE363F2D1BCB9EE800ED45D9 /* UIImage+SingleColorImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SingleColorImage.h"; sourceTree = "<group>"; };
+		EE363F2E1BCB9EE800ED45D9 /* UIImage+SingleColorImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SingleColorImage.m"; sourceTree = "<group>"; };
 		EE4544EC1BBA313E00B206B5 /* ListViewDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewDataLoader.h; sourceTree = "<group>"; };
 		EE4544ED1BBA313E00B206B5 /* ListViewDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewDataLoader.m; sourceTree = "<group>"; };
 		EE4544F21BBA342A00B206B5 /* SearchListViewDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchListViewDataLoader.h; sourceTree = "<group>"; };
@@ -122,8 +124,6 @@
 		EE7140F61BB2493E00873347 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		EE7140FB1BB24AF500873347 /* SearchListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchListViewController.h; sourceTree = "<group>"; };
 		EE7140FC1BB24AF500873347 /* SearchListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchListViewController.m; sourceTree = "<group>"; };
-		EE7140FE1BB24BF700873347 /* MbzArtistListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MbzArtistListViewController.h; sourceTree = "<group>"; };
-		EE7140FF1BB24BF700873347 /* MbzArtistListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MbzArtistListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +169,8 @@
 		EE363F291BC8FDD600ED45D9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EE363F2D1BCB9EE800ED45D9 /* UIImage+SingleColorImage.h */,
+				EE363F2E1BCB9EE800ED45D9 /* UIImage+SingleColorImage.m */,
 				EE363F2A1BC8FDD600ED45D9 /* UISearchController+NavigationItemSearchBar.h */,
 				EE363F2B1BC8FDD600ED45D9 /* UISearchController+NavigationItemSearchBar.m */,
 			);
@@ -312,8 +314,6 @@
 				EE4544EB1BBA313E00B206B5 /* ListViewDataLoader */,
 				EE7140FB1BB24AF500873347 /* SearchListViewController.h */,
 				EE7140FC1BB24AF500873347 /* SearchListViewController.m */,
-				EE7140FE1BB24BF700873347 /* MbzArtistListViewController.h */,
-				EE7140FF1BB24BF700873347 /* MbzArtistListViewController.m */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -486,11 +486,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE7140EC1BB2369900873347 /* MbzResponse.m in Sources */,
+				EE363F2F1BCB9EE800ED45D9 /* UIImage+SingleColorImage.m in Sources */,
 				EE7140E71BB2369900873347 /* MbzApi+WebServiceBrowse.m in Sources */,
 				EE7140A01BB2352600873347 /* HomeViewController.m in Sources */,
 				EE7140E41BB2369900873347 /* MbzDataLifeSpan.m in Sources */,
 				EE7140EF1BB2369900873347 /* RawResponse.m in Sources */,
-				EE7141001BB24BF700873347 /* MbzArtistListViewController.m in Sources */,
 				EE7140ED1BB2369900873347 /* NSString+DoubleQuotesString.m in Sources */,
 				EE4544FA1BBA347600B206B5 /* BrowseListViewDataLoader.m in Sources */,
 				EE363F2C1BC8FDD600ED45D9 /* UISearchController+NavigationItemSearchBar.m in Sources */,
