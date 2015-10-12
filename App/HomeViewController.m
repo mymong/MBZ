@@ -47,7 +47,7 @@
     
     NSMutableArray *pages = [NSMutableArray new];
     NSMutableArray *titles = [NSMutableArray new];
-    NSArray *entities = @[MbzEntity_Artist, MbzEntity_ReleaseGroup, MbzEntity_Release, MbzEntity_Recording, MbzEntity_Instrument, MbzEntity_Work, MbzEntity_Label];
+    NSArray *entities = @[MbzEntity_Artist, MbzEntity_Recording, MbzEntity_Release, MbzEntity_ReleaseGroup, MbzEntity_Instrument, MbzEntity_Work, MbzEntity_Label];
     for (NSString *entity in entities) {
         SearchListViewController *viewController = [SearchListViewController loadFromStoryboard];
         viewController.searchEntity = entity;
@@ -70,9 +70,10 @@
     [self.segmentedControl addTarget:self action:@selector(onSegmentChanged:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:self.segmentedControl];
     
-    _pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    _pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:@{UIPageViewControllerOptionInterPageSpacingKey:@(8.0)}];
     self.pageViewController.delegate = self;
     self.pageViewController.dataSource = self;
+    self.pageViewController.view.backgroundColor = self.barColor;
     self.pageViewController.view.frame = CGRectMake(0, self.heightOfSegmentedControl, bounds.size.width, bounds.size.height - self.heightOfSegmentedControl);
     [self.pageViewController setViewControllers:@[self.pages.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     [self.view addSubview:self.pageViewController.view];
@@ -158,6 +159,7 @@
     NSUInteger currentIndex = currentViewController ? [self.pages indexOfObject:currentViewController] : NSNotFound;
     if (currentIndex != NSNotFound) {
         [self.segmentedControl setSelectedSegmentIndex:currentIndex animated:YES];
+        [self onSegmentChanged:self.segmentedControl];
     }
 }
 
