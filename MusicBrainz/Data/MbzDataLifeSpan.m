@@ -23,14 +23,6 @@
 }
 
 - (NSString *)description {
-    return [self showString] ?: [super description];
-}
-
-@end
-
-@implementation MbzDataLifeSpan (Show)
-
-- (NSString *)showString {
     NSString *end = self.end;
     NSString *begin = self.begin;
     
@@ -42,7 +34,7 @@
         return [NSString stringWithFormat:@"(%@)", begin];
     }
     
-    return nil;
+    return @"";
 }
 
 @end

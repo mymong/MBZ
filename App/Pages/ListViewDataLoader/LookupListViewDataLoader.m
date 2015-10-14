@@ -18,7 +18,7 @@
     return self;
 }
 
-- (void)reload {
+- (void)load {
     if ([self willLoad]) {
         __weak __typeof(self) wself = self;
         NSString *entity = self.entity;

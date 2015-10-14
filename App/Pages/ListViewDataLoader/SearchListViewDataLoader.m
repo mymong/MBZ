@@ -162,7 +162,7 @@
             }
             else if ([obj isKindOfClass:NSDictionary.class]) {
                 NSString *str = [self summaryForDataType:key withDataDictionary:obj];
-                if (str) {
+                if (str.length > 0) {
                     [strs addObject:str];
                 }
             }
@@ -175,7 +175,7 @@
 - (NSString *)summaryForDataType:(NSString *)type withDataDictionary:(NSDictionary *)dic {
     if ([type isEqualToString:@"life-span"]) {
         MbzDataLifeSpan *span = [[MbzDataLifeSpan alloc] initWithDictionary:dic];
-        return span.showString;
+        return span.description;
     }
     
     for (NSString *key in @[@"name", @"title"]) {

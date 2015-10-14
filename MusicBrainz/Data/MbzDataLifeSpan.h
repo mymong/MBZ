@@ -13,7 +13,3 @@
 @property (nonatomic,readonly) NSString *end;
 @property (nonatomic,readonly) NSNumber *ended;
 @end
-
-@interface MbzDataLifeSpan (Show)
-- (NSString *)showString;
-@end
